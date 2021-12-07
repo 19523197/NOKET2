@@ -1,0 +1,434 @@
+/*ngeload font
+font-family: 'Noto Sans', sans-serif;
+font-family: 'Raleway', sans-serif;
+font-family: 'Work Sans', sans-serif;
+*/
+
+body,head{
+    margin: 0;
+    padding: 0;
+}
+
+h1,h2,h3,h4{
+    font-family: 'Work-Sans',sans-serif;
+}
+
+h5,h6{
+    font-family: 'Raleway', sans-serif;
+}
+
+p,a{
+    font-family: 'Work Sans', sans-serif;
+}
+
+#page{
+   
+}
+
+#isi-page{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+/**********************************Navbar***********************************/
+
+.navbar{
+    width: 100%;
+    height: auto;
+ }
+ .navbarLogo{
+   color: black;
+   float: left;
+   text-align: left;
+   margin-top: 1%;
+   margin-left: 30px;
+ }
+ 
+ ol,ul {
+   list-style: none;
+ }
+ 
+ .navbarMenu {
+   font-family: "Work Sans";
+   float: right;
+   background-color: #FFF;
+   text-align: center;
+   justify-content: center;
+   display: flex;
+   position: relative;
+ }
+ 
+ .navbarMenu li {
+   display:block;
+   width:200px;
+   float:right;
+   margin-left:10px;
+   font-weight: bolder;
+ }
+ 
+ .navbarMenu a {
+   display:block;
+   padding:1%;
+   text-decoration:none;
+   background-color:#fff;
+   color:black;
+ }
+ 
+ .navbarMenu a:hover {
+   background-color: #F9D5A7;
+   color: black;
+ }
+
+/**********************************Navbar*********************************/
+
+/*************************************SideBar*****************************/
+
+#sidebar{
+    width: 20%;
+    min-height: 87.5vh;
+    background-color: F9D5A7;
+}
+
+.sidebar-item-profile{
+    width: 90%;
+    height: auto;
+    display: flex;
+    margin: auto;
+    text-align: center;
+    padding: 3%;
+    border-bottom: 2px solid black;
+}
+
+.sidebar-item-container{
+    width: 100%;
+    height: auto;
+    display: block;
+    text-decoration: none;
+    color: black;
+    border: none;
+}
+
+.sidebar-item-container:hover{
+    background-color: #555;
+    color: white;
+}
+
+.sidebar-item{
+    width: 70%;
+    height: auto;
+    display: flex;
+    margin: auto;
+    text-align: center;
+    padding: 1%;
+    
+}
+
+#sidebar-item-icon{
+    width: 2vw;
+    height: 4vh;
+    display: flex;
+    margin-right: 5%;
+    margin-top: 4%;
+}
+
+#sidebar-image-profile{
+    width: 10vh;
+    height: 5vw;
+    margin-right: 15%;
+    border: solid 2px black;
+    border-radius: 10%;
+    background-color: white;
+}
+
+#sidebar-image{
+    width: 100%;
+    height: 100%;
+    margin-top: 10%;
+    
+    
+}
+
+#sidebar-image-container{
+    width: 30%;
+    height: 20%;
+    display: flex;
+    margin: auto;
+    margin-right: 65%;
+    
+}
+
+.sidebar-item-text{
+
+}
+
+/**************************************************************SideBar*****************************/
+
+/*****************Collapse SideBar**************/
+    .collapsible {
+        
+    }
+
+    .active, .collapsible:hover {
+    
+    }
+
+    .collapse-item {
+    height: auto;
+    display: none;
+    
+    color: black;
+    }
+
+    /***#555**/
+
+    .collapse-item-container:hover {
+        background-color: #555;
+        color: white;
+        }
+
+    .collapse-item-2 {
+        width: 50%;
+        height: auto;
+        display: flex;
+        margin: auto;
+        text-align: center;
+        padding: none;
+        }
+
+    .collapse-item-container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    text-decoration: none;
+    color: black;
+    border: none;
+    }
+
+    #collapse-item-icon{
+    width: 2vw;
+    height: 4vh;
+    display: flex;
+    margin-right: 5%;
+    margin-top: 10%;
+    }
+
+    .selected{
+        background-color: #90AACB;
+        color: white;
+    }
+
+
+/**********************Collapse Sidebar********************/
+
+/************************Content****************************/
+#content-card{
+    width: 80%;
+    height: auto;
+    background-color: FEF1E6;
+    
+}
+
+#info-header
+{
+    width: 95%;
+    height: auto;
+    margin: auto;
+    margin-top: 3%;
+    border: black solid 1px;
+    border-radius: 1vw;
+    display: flex;
+    background-color: F9D5A7;
+}
+
+#info-header-kiri
+{
+    width: 50%;
+    height: auto;
+    text-align: center;
+    border-right: white 1px solid;
+}
+
+#info-header-kanan
+{
+    width: 50%;
+    height: auto;
+    text-align: center;
+    border-left: white 1px solid;
+}
+
+#info-header-judul 
+{
+    font-weight: 700;
+}
+
+#table-atas
+{
+    width: 95%;
+    height: auto;
+    display: flex;
+    margin: auto;
+    margin-top: 5%;
+}
+
+#table-atas-pengeluaran
+{
+    width: 15%;
+    height: auto;
+    text-align: center;
+    text-decoration: none;
+    background-color: #F9D5A7;
+    border:1px black solid;
+}
+
+#table-atas-penjualan
+{
+    width: 15%;
+    height: auto;
+    text-align: center;
+    text-decoration: none;
+    background-color: rgb(250, 173, 73);
+    border:1px black solid;
+}
+
+#table-atas-jarak
+{
+    width: 55%;
+}
+
+#table-atas-tambah
+{
+    width: 15%;
+    height: auto;
+    text-align: center;
+    text-decoration: none;
+    background-color: F9D5A7;
+    border:1px black solid;
+}
+
+#table-atas-tambah:hover
+{
+    background-color: #d8a96b;
+}
+
+#table-wrapper
+{
+    width: 95%;
+    ;
+    margin: auto;
+}
+
+#table-scroll
+{
+    overflow:auto;
+    width: 100%;
+    max-height: 60%;
+}
+
+
+
+#myTable
+{
+    width: 100%;
+    
+    border: 1px solid black;
+}
+
+#myTable th
+{
+    background-color: A9A9A9;
+    text-align: center;
+    vertical-align: middle;
+    padding: 1%;
+}
+
+#myTable th p
+{
+    font-weight: 500;
+}
+
+#myTable td
+{
+    text-align: center;
+    padding: 2%;
+    background-color: white;
+    border-bottom: 1px solid black;
+    border-collapse: collapse;
+}
+
+#myTable td p
+{
+    font-weight: lighter;
+    font-size: 0.9em;
+}
+
+#table-kategori-pengeluaran
+{
+    color: 00A85A;
+}
+
+#tombol-aksi-edit
+{
+    margin: auto;
+    width: 45%;
+    height: auto;
+    background-color: FF861A;
+    border: 1px solid white;
+}
+
+#tombol-aksi-edit a
+{
+    text-decoration: none;
+    color: black;
+}
+
+#tombol-aksi-hapus
+{
+
+    width: 45%;
+    height: auto;
+    background-color: FF0000;
+    color: white;
+    border: 1px solid white;
+}
+
+#tombol-aksi-hapus a
+{
+    text-decoration: none;
+    color: white;
+}
+
+
+#button-tambah-img{
+    width: 1.5em;
+    height: 1.5em;
+    margin-right: 0.5em;
+}
+
+#button-tambah-container{
+    width: 10%;
+    height: auto;
+    margin-left: 2.5% ;
+    margin-top: 2%;
+    display: flex;
+    color:black;
+    background-color: F9D5A7;
+    padding: 1%;
+    border: solid;
+    border-radius: 5%;
+}
+
+/*************************\Content\***************************/
+
+#footer{
+    width: 100%;
+      height: 10%;
+      
+      line-height: 50px;
+      background: #333;
+      color: #fff;
+      position: absolute;
+      
+      margin: auto;
+      }

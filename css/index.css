@@ -1,0 +1,34 @@
+body,head{
+    margin: 0;
+    padding: 0;
+}
+
+#navbar{
+    width: 100%;
+    height: 15%;
+    background-color: cyan;
+    display: flex;
+    flex-wrap: wrap;
+    flex: auto;
+    margin: 0px;
+    
+    
+}
+
+.nav-item{
+    width: 12%;
+    height: auto;
+    margin: auto;
+}
+
+.nav-logo{
+    width: 48%;
+    height: auto;
+    margin: auto;
+    padding: 1%;
+}
+
+.content-container{
+    width: 30%;
+    height: 50%;
+}

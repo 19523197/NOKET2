@@ -1,0 +1,374 @@
+/*ngeload font
+font-family: 'Noto Sans', sans-serif;
+font-family: 'Raleway', sans-serif;
+font-family: 'Work Sans', sans-serif;
+*/
+
+body,head{
+  margin: 0;
+  padding: 0;
+
+
+}
+
+h1,h2,h3{
+  font-family: 'Work-Sans',sans-serif;
+}
+
+h4,h5,h6{
+font-family: 'Raleway', sans-serif;
+}
+
+p{
+font-family: 'Work Sans', sans-serif;
+}
+
+#page{
+ 
+}
+
+#isi-page{
+  width: 100%;
+  height: auto;
+  display: flex;
+  background-color: FFB085;
+}
+
+@media only screen and (min-width: 960px) {
+/**********************************Navbar***********************************/
+
+.navbar{
+  width: 100%;
+  height: 10%;
+}
+.navbarLogo{
+color: black;
+float: left;
+text-align: left;
+margin-top: 1%;
+margin-left: 30px;
+}
+
+ol,ul {
+list-style: none;
+}
+
+.navbarMenu {
+font-family: "Work Sans";
+float: right;
+background-color: #FFF;
+text-align: center;
+justify-content: center;
+display: flex;
+position: relative;
+}
+
+.navbarMenu li {
+display:block;
+width:200px;
+float:right;
+margin-left:10px;
+font-weight: bolder;
+}
+
+.navbarMenu a {
+display:block;
+padding:1%;
+text-decoration:none;
+background-color:#fff;
+color:black;
+}
+
+.navbarMenu a:hover {
+background-color: #F9D5A7;
+color: black;
+}
+
+#selected{
+  background-color: #FFB085;
+}
+
+/**********************************Navbar*********************************/
+
+/*************************************SideBar*****************************/
+
+#sidebar{
+  width: 20%;
+  min-height: 87.5vh;
+  background-color: F9D5A7;
+}
+
+.sidebar-item-profile{
+  width: 90%;
+  height: auto;
+  display: flex;
+  margin: auto;
+  text-align: center;
+  padding: 3%;
+  border-bottom: 2px solid black;
+}
+
+.sidebar-item-container{
+  width: 100%;
+  height: auto;
+  display: block;
+  text-decoration: none;
+  color: black;
+  border: none;
+}
+
+.sidebar-item-container:hover{
+  background-color: #555;
+  color: white;
+}
+
+.sidebar-item{
+  width: 70%;
+  height: auto;
+  display: flex;
+  margin: auto;
+  text-align: center;
+  padding: 1%;
+  
+}
+
+#sidebar-item-icon{
+  width: 2vw;
+  height: 4vh;
+  display: flex;
+  margin-right: 5%;
+  margin-top: 4%;
+}
+
+#sidebar-image-profile{
+  width: 10vh;
+  height: 5vw;
+  margin-right: 15%;
+  border: solid 2px black;
+  border-radius: 10%;
+  background-color: white;
+}
+
+#sidebar-image{
+  width: 100%;
+  height: 100%;
+  margin-top: 10%;
+  
+  
+}
+
+#sidebar-image-container{
+  width: 30%;
+  height: 20%;
+  display: flex;
+  margin: auto;
+  margin-right: 65%;
+  
+}
+
+.sidebar-item-text{
+
+}
+
+/**************************************************************SideBar*****************************/
+
+/*****************Collapse SideBar**************/
+  .collapsible {
+      
+  }
+
+  .active, .collapsible:hover {
+  
+  }
+
+  .collapse-item {
+  height: auto;
+  display: none;
+  
+  color: black;
+  }
+
+  /***#555**/
+
+  .collapse-item-container:hover {
+      background-color: #555;
+      color: white;
+      }
+
+  .collapse-item-2 {
+      width: 50%;
+      height: auto;
+      display: flex;
+      margin: auto;
+      text-align: center;
+      padding: none;
+      }
+
+  .collapse-item-container{
+  width: 100%;
+  height: auto;
+  display: flex;
+  text-decoration: none;
+  color: black;
+  border: none;
+  }
+
+  #collapse-item-icon{
+  width: 2vw;
+  height: 4vh;
+  display: flex;
+  margin-right: 5%;
+  margin-top: 10%;
+}
+
+
+/**********************Collapse Sidebar********************/
+
+#content-card{
+  width: 80%;
+  height: auto;
+  background-color: FEF1E6;
+  
+  
+}
+
+#footer{
+  height: auto;
+  width: 100%;
+  line-height: 50px;
+  background: #333;
+  color: #fff;
+  position: absolute;
+  
+  
+}
+
+
+#login-kiri{
+width: 55%;
+height: auto;
+margin: auto;
+
+display: flex;
+flex-direction: column;
+
+}
+
+#login-kiri-foto{
+width: 100%;
+height: auto;
+margin: auto;
+margin-bottom: -10%;
+
+}
+
+#login-kiri-img{
+width: 100%;
+height: 100%;
+
+}
+
+#login-kiri-slogan{
+width: 100%;
+height: auto;
+margin: auto;
+color: white;
+text-align: center;
+font-size: 3vw;
+}
+
+#login-kanan{
+width: 30%;
+height: auto;
+
+margin-right: 5%;
+}
+
+#form-container{
+width: 100%;
+height: auto;
+display: flex;
+flex-direction: column;
+
+border-radius: 2%;
+margin: auto;
+margin-top: 10%;
+background-color: white;
+
+}
+
+#form-container-judul{
+width: 90%;
+margin: auto;
+}
+
+#form-container-username{
+width: 80%;
+height: auto;
+margin: auto;
+margin-bottom: 5%;
+margin-top: 15%;
+}
+
+#form-container-username > input{
+width: 100%;
+padding: 5%;
+border: none;
+border-bottom: 1px solid grey;
+}
+
+#form-container-password{
+width: 80%;
+height: auto;
+margin: auto;
+margin-bottom: 5%;
+}
+
+#form-container-password > input{
+width: 100%;
+padding: 5%;
+border: none;
+border-bottom: 1px solid grey;
+}
+
+#form-container-button{
+width: 40%;
+height: auto;
+margin: auto;
+margin-top: 20%;
+margin-bottom: 5%;
+}
+
+#form-container-button > input{
+width: 100%;
+padding: 6%;
+margin: auto;
+border: none;
+background-color: #90AACB;
+font-family: 'Raleway', sans-serif;
+color: white;
+}
+
+#form-container-lupa{
+width: 50%;
+margin: auto;
+margin-top: 5%;
+margin-bottom: 5%;
+text-align: center;
+}
+
+}
+
+#footer{
+      width: 100%;
+      height: auto;
+      background: #333;
+      color: #fff;
+      position: absolute;
+      margin: auto;
+      text-align: center;
+      font-family: Work-Sans;
+     }
+#footer h4{
+    font-weight: lighter;
+}
