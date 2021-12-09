@@ -200,7 +200,7 @@ p,a{
         text-align: center;
         padding: none;
         }
-
+    
     .collapse-item-container{
     width: 100%;
     height: auto;
@@ -292,7 +292,7 @@ p,a{
     height: auto;
     text-align: center;
     text-decoration: none;
-    background-color: rgb(250, 173, 73);;
+    background-color: rgb(250, 173, 73);
     border:1px black solid;
 }
 
@@ -369,13 +369,13 @@ p,a{
 
 #table-kategori-pengeluaran
 {
-    color: 0172B7;
+    color: 00A85A;
 }
 
 #tombol-aksi-edit
 {
     margin: auto;
-    width: 30%;
+    width: 45%;
     height: auto;
     background-color: FF861A;
     border: 1px solid white;
@@ -390,7 +390,7 @@ p,a{
 #tombol-aksi-hapus
 {
 
-    width: 30%;
+    width: 45%;
     height: auto;
     background-color: FF0000;
     color: white;
@@ -398,22 +398,6 @@ p,a{
 }
 
 #tombol-aksi-hapus a
-{
-    text-decoration: none;
-    color: white;
-}
-
-#tombol-aksi-lunas
-{
-
-    width: 30%;
-    height: auto;
-    background-color: 00A85A;
-    color: white;
-    border: 1px solid white;
-}
-
-#tombol-aksi-lunas a
 {
     text-decoration: none;
     color: white;

@@ -36,7 +36,6 @@ p,a{
 
 .navbar{
     width: 100%;
-    height: auto;
  }
  .navbarLogo{
    color: black;
@@ -97,8 +96,9 @@ p,a{
     display: flex;
     margin: auto;
     text-align: center;
-    padding: 3%;
-    border-bottom: 2px solid black;
+    padding: 1%;
+    margin-bottom: 1%;
+    border-bottom: px solid black;
 }
 
 .sidebar-item-container{
@@ -196,7 +196,7 @@ p,a{
         text-align: center;
         padding: none;
         }
-
+    
     .collapse-item-container{
     width: 100%;
     height: auto;
