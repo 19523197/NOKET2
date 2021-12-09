@@ -24,7 +24,7 @@
                 <nav>
                         <ul class="navbarMenu">
                             <li><h3><a href="#">About</a></h3></li>
-                            <li><h3><a href="login.php">Log out</a></h3></li>
+                            <li><h3><a href="php/logout.php">Log out</a></h3></li>
                         </ul>
                 </nav>
         </div>

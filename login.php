@@ -44,7 +44,7 @@
 
             <div id="login-kanan">
                 <div id="form-container">
-                    <form method="post" action="mainPage.php">
+                    <form method="post" action="php/masuk.php">
                     <div id="form-container-judul">
                         <h1>Login</h1>
                     </div>

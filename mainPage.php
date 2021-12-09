@@ -1,3 +1,17 @@
+<?php
+
+    include 'php/koneksi.php';
+    session_start();
+
+    $sql = "SELECT * FROM pengguna WHERE username = '$_SESSION[username]'" ;
+    $result = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_assoc($result);
+
+    $sql2 = "SELECT * FROM akun" ;
+    $result2 = mysqli_query($conn, $sql2);
+
+?>
+
 <html>
     <head>
         <meta charset="utf-8">
@@ -23,7 +37,7 @@
             </div>
                 <nav>
                         <ul class="navbarMenu">
-                            <li><h3><a href="login.php">Log out</a></h3></li>
+                            <li><h3><a href="php/logout.php">Log out</a></h3></li>
                         </ul>
                 </nav>
         </div>
@@ -36,7 +50,9 @@
                 <div class="sidebar-item-profile">
                     <div id="sidebar-image-container">
                         <img src="foto/avatar-icon.png" alt="#" id="sidebar-image-profile">
-                        <h1>Admin</h1>   
+                        <h1><?php
+                        echo $row['username'];
+                        ?></h1>   
                     </div>
                 </div>
                 

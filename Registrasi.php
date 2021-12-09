@@ -44,7 +44,7 @@
 
             <div id="login-kanan">
                 <div id="form-container">
-                    <form method="post" action="login.php">
+                    <form method="post" action="php/daftar.php">
                     <div id="form-container-judul">
                         <h1>Sign Up</h1>
                     </div>
@@ -53,16 +53,19 @@
                         <input type="text" name="username" id="" placeholder="Username">
                     </div>
                     <div id="form-container-password">
-                        <input type="email" name="password" id="" placeholder="Email">
+                        <input type="email" name="email" id="" placeholder="Email">
                     </div>
                     <div id="form-container-password">
             
-                        <input type="text" name="password" id="" placeholder="Password">
+                        <input type="password" name="password" id="" placeholder="Password">
                     </div>
 
                     <div id="form-container-password">
-            
-                        <input type="text" name="confirm-password" id="" placeholder="Confirm Password">
+                        <input type="password" name="confirm-password" id="" placeholder="Confirm Password">
+                    </div>
+
+                    <div id="form-container-password">
+                        <input type="text" name="no-hp" id="" placeholder="No-HP">
                     </div>
 
                     <div id="form-container-button">

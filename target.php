@@ -26,7 +26,7 @@
                             <li><h3><a href="#"></a></h3></li>
                             <li><h3><a href="#"></a></h3></li>
                             <li><h3><a href="#">About</a></h3></li>
-                            <li><h3><a href="login.php">Log Out</a></h3></li>
+                            <li><h3><a href="php/logout.php">Log Out</a></h3></li>
                         </ul>
                 </nav>
         </div>
