@@ -1,9 +1,9 @@
 <html>
     <head>
         <meta charset="utf-8">
-	    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="css/tambah-utang.css">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/components.css">
         
 
         <!--Import Font dari web-->
@@ -41,11 +41,12 @@
                 </div>
                 
             
-                <a href="mainPage.php" class="sidebar-item-container">
+                <a href="#" class="sidebar-item-container">
                     <div class="sidebar-item">
                         <div id="sidebar-item-icon">
                             <img src="foto/icons8-dashboard-100.png" alt="" id="sidebar-image">
                         </div>
+
                         <div class="sidebar-item-text">
                             <h3>Dashboard</h3>
                         </div>
@@ -55,7 +56,7 @@
                 <a href="#" class="sidebar-item-container collapsible">
                     <div class="sidebar-item">
                         <div id="sidebar-item-icon">
-                            <img src="foto/icons8-money-96.png" alt="" id="sidebar-image">
+                            <img src="foto/kiri.png" alt="" id="sidebar-image">
                         </div>
                         <div class="sidebar-item-text">
                             <h3>Transaksi</h3>
@@ -64,32 +65,9 @@
                 </a>
 
                     <div class="collapse-item">
-                        <a href="penjualan.php" class="collapse-item-container" >
+                        <a href="pemasukan.php" class="collapse-item-container" >
                             <div class="collapse-item-2">
                                 <div id="collapse-item-icon">
-                                    <img src="foto/kanan.png" alt="" id="sidebar-image">
-                                </div>
-                                <div class="sidebar-item-text">
-                                    <h4>Penjualan</h4>
-                                </div>
-                            </div>
-                        </a>
-        
-                        <a href="pengeluaran.php" class="collapse-item-container">
-                            <div class="collapse-item-2">
-                                <div id="collapse-item-icon">
-                                    <img src="foto/kiri.png" alt="" id="sidebar-image">
-                                </div>
-                                <div class="sidebar-item-text">
-                                    <h4>Pengeluaran</h4>
-                                </div>
-                            </div>
-                        </a>
-
-                        <a href="laporan-transaksi.php" class="collapse-item-container">
-                            <div class="collapse-item-2">
-                                <div id="collapse-item-icon">
-                                    <img src= "foto/laporan.png" alt="" id="sidebar-image">
                                 </div>
                                 <div class="sidebar-item-text">
                                     <h4>Laporan</h4>
@@ -97,11 +75,11 @@
                             </div>
                         </a>
                     </div>
-
-                <a href="#" class="sidebar-item-container collapsible selected">
+                    
+                <a href="#" class="sidebar-item-container collapsible">
                     <div class="sidebar-item">
                         <div id="sidebar-item-icon">
-                            <img src="foto/icons8-money-bag-90.png" alt="" id="sidebar-image">
+                            <img src="foto/kanan.png" alt="" id="sidebar-image">
                         </div>
                         <div class="sidebar-item-text">
                             <h3>Utang & Piutang</h3>
@@ -113,29 +91,6 @@
                         <a href="utang.php" class="collapse-item-container" >
                             <div class="collapse-item-2">
                                 <div id="collapse-item-icon">
-                                  <img src="foto/keluar.png" alt="" id="sidebar-image">
-                                </div>
-                                <div class="sidebar-item-text">
-                                    <h4>Utang</h4>
-                                </div>
-                            </div>
-                        </a>
-
-                        <a href="piutang.php" class="collapse-item-container" >
-                            <div class="collapse-item-2">
-                                <div id="collapse-item-icon">
-                                    <img src="foto/masuk.png" alt="" id="sidebar-image">
-                                </div>
-                                <div class="sidebar-item-text">
-                                    <h4>Piutang</h4>
-                                </div>
-                            </div>
-                        </a>
-
-                        <a href="laporan-utang.php" class="collapse-item-container" >
-                            <div class="collapse-item-2">
-                                <div id="collapse-item-icon">
-                                    <img src="foto/laporan.png" alt="" id="sidebar-image">
                                 </div>
                                 <div class="sidebar-item-text">
                                     <h4>Laporan</h4>
@@ -188,54 +143,17 @@
                             </div>
                         </a>
                     </div>
+                
+               
             </div>
 
             
-            
-            <div id="content-card">
-                <div id="content-container">
-                    <form action="#" method="POST">
-                        <a href="utang.php" style="color:929292; text-decoration: none; margin-top:5%;">Kembali</a>
-                        <div class="laporan-container">
-                            <div class="laporan-card">
-                                <div class="laporan-card-judul">
-                                    <h1>Tambah Utang-Piutang</h1>
-                                </div>
-                                <div class="laporan-card-main1">
-                                    <label for="input-instansi">Instansi</label>
-                                    <select name="input-instansi" id="">
-                                        <option value="">Pak Tywin</option>
-                                        <option value="">Bu Arya</option>
-                                        <option value="">Bu Sansa</option>
-                                    </select>
-                                </div>
-                                <div class="laporan-card-main2">
-                                    <label for="input-jenis">Jenis</label>
-                                    <select name="input-jenis" id="">
-                                        <option value="penjualan">Utang</option>
-                                        <option value="pengeluaran">Piutang</option>
-                                    </select>
-                                </div>
-                                
-                                <div class="laporan-card-main4">
-                                    <label for="input-nominal">Nominal</label>
-                                    <input type="number" name="input-nominal" id="">
-                                </div>
-                                <div class="laporan-card-main5">
-                                    <label for="input-tanggal" style="display: block;">Tanggal</label>
-                                    <input type="date" name="input-tanggal" id="">
-                                </div>
-                                <div class="laporan-card-button">
-                                    <input type="submit" name="" id="" value="Tambah">
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </form>
-                    
 
-                   
-                </div>
+            <div id="content-card">
+                
+                
+
+                
             </div>
 
         </div>

@@ -41,12 +41,11 @@
                 </div>
                 
             
-                <a href="#" class="sidebar-item-container selected">
+                <a href="mainPage.php" class="sidebar-item-container selected">
                     <div class="sidebar-item">
                         <div id="sidebar-item-icon">
                             <img src="foto/icons8-dashboard-100.png" alt="" id="sidebar-image">
                         </div>
-
                         <div class="sidebar-item-text">
                             <h3>Dashboard</h3>
                         </div>
@@ -56,7 +55,7 @@
                 <a href="#" class="sidebar-item-container collapsible">
                     <div class="sidebar-item">
                         <div id="sidebar-item-icon">
-                            <img src="foto/kiri.png" alt="" id="sidebar-image">
+                            <img src="foto/icons8-money-96.png" alt="" id="sidebar-image">
                         </div>
                         <div class="sidebar-item-text">
                             <h3>Transaksi</h3>
@@ -65,9 +64,32 @@
                 </a>
 
                     <div class="collapse-item">
-                        <a href="pemasukan.php" class="collapse-item-container" >
+                        <a href="penjualan.php" class="collapse-item-container" >
                             <div class="collapse-item-2">
                                 <div id="collapse-item-icon">
+                                    <img src="foto/kanan.png" alt="" id="sidebar-image">
+                                </div>
+                                <div class="sidebar-item-text">
+                                    <h4>Penjualan</h4>
+                                </div>
+                            </div>
+                        </a>
+        
+                        <a href="pengeluaran.php" class="collapse-item-container">
+                            <div class="collapse-item-2">
+                                <div id="collapse-item-icon">
+                                    <img src="foto/kiri.png" alt="" id="sidebar-image">
+                                </div>
+                                <div class="sidebar-item-text">
+                                    <h4>Pengeluaran</h4>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="laporan-transaksi.php" class="collapse-item-container">
+                            <div class="collapse-item-2">
+                                <div id="collapse-item-icon">
+                                    <img src= "foto/laporan.png" alt="" id="sidebar-image">
                                 </div>
                                 <div class="sidebar-item-text">
                                     <h4>Laporan</h4>
@@ -75,11 +97,11 @@
                             </div>
                         </a>
                     </div>
-                    
+
                 <a href="#" class="sidebar-item-container collapsible">
                     <div class="sidebar-item">
                         <div id="sidebar-item-icon">
-                            <img src="foto/kanan.png" alt="" id="sidebar-image">
+                            <img src="foto/icons8-money-bag-90.png" alt="" id="sidebar-image">
                         </div>
                         <div class="sidebar-item-text">
                             <h3>Utang & Piutang</h3>
@@ -91,6 +113,29 @@
                         <a href="utang.php" class="collapse-item-container" >
                             <div class="collapse-item-2">
                                 <div id="collapse-item-icon">
+                                  <img src="foto/keluar.png" alt="" id="sidebar-image">
+                                </div>
+                                <div class="sidebar-item-text">
+                                    <h4>Utang</h4>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="utang.php" class="collapse-item-container" >
+                            <div class="collapse-item-2">
+                                <div id="collapse-item-icon">
+                                    <img src="foto/masuk.png" alt="" id="sidebar-image">
+                                </div>
+                                <div class="sidebar-item-text">
+                                    <h4>Piutang</h4>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="utang.php" class="collapse-item-container" >
+                            <div class="collapse-item-2">
+                                <div id="collapse-item-icon">
+                                    <img src="foto/laporan.png" alt="" id="sidebar-image">
                                 </div>
                                 <div class="sidebar-item-text">
                                     <h4>Laporan</h4>
@@ -143,8 +188,6 @@
                             </div>
                         </a>
                     </div>
-                
-               
             </div>
 
             

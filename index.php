@@ -34,8 +34,8 @@
                     <ul class="nav__list">
                         <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
                         <li class="nav__item"><a href="#feature" class="nav__link">Features</a></li>
-                        <li class="nav__item"><a href="#login page" class="nav__link">Log in</a></li>
-                        <li class="nav__item"><a href="#register page" class="nav__link">Sign Up</a></li>
+                        <li class="nav__item"><a href="login.php" class="nav__link">Log in</a></li>
+                        <li class="nav__item"><a href="Registrasi.php" class="nav__link">Sign Up</a></li>
                     </ul>
                 </div>
             </nav>
@@ -71,11 +71,11 @@
                 <div class ="feature__img">
                 <img src="assets/img/1.png" alt="" data-speed="1" class="move">
                 <br>
-                    <i>Pencatatan Pemasukan dan Pengeluaran UKM dengan lebih mudah dan rapi</i>
+                    <i>Pencatatan Penjualan Pengeluaran Keuangan UKM secara digital yang mudah dan aman</i>
                     <br>
                 <img src="assets/img/2.png" alt="" data-speed="1" class="move">
                 <br>
-                    <i>Pencatatan Utang Piutang UKM dan dapat mengetahuinya lebih detail</i>
+                    <i>Pencatatan Utang Piutang yang dimiliki UKM dan Dapat mengetahuinya Lebih Detail</i>
                     <br><br>
                 <img src="assets/img/3.png" alt="" data-speed="1" class="move"> 
                 <br>

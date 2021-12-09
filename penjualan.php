@@ -3,7 +3,7 @@
         <meta charset="utf-8">
 	    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="css/utang.css">
+        <link rel="stylesheet" href="css/penjualan.css">
         
 
         <!--Import Font dari web-->
@@ -17,7 +17,7 @@
     <body>
     <div id="page">
 
-         <div class = "navbar">
+        <div class = "navbar">
             <div class="navbarLogo">
                 <h1>NOKET<h1>
             </div>
@@ -52,7 +52,7 @@
                     </div>
                 </a>
 
-                <a href="#" class="sidebar-item-container collapsible">
+                <a href="#" class="sidebar-item-container collapsible  selected">
                     <div class="sidebar-item">
                         <div id="sidebar-item-icon">
                             <img src="foto/icons8-money-96.png" alt="" id="sidebar-image">
@@ -98,7 +98,7 @@
                         </a>
                     </div>
 
-                <a href="#" class="sidebar-item-container collapsible selected">
+                <a href="#" class="sidebar-item-container collapsible">
                     <div class="sidebar-item">
                         <div id="sidebar-item-icon">
                             <img src="foto/icons8-money-bag-90.png" alt="" id="sidebar-image">
@@ -121,7 +121,7 @@
                             </div>
                         </a>
 
-                        <a href="piutang.php" class="collapse-item-container" >
+                        <a href="utang.php" class="collapse-item-container" >
                             <div class="collapse-item-2">
                                 <div id="collapse-item-icon">
                                     <img src="foto/masuk.png" alt="" id="sidebar-image">
@@ -132,7 +132,7 @@
                             </div>
                         </a>
 
-                        <a href="laporan-utang.php" class="collapse-item-container" >
+                        <a href="utang.php" class="collapse-item-container" >
                             <div class="collapse-item-2">
                                 <div id="collapse-item-icon">
                                     <img src="foto/laporan.png" alt="" id="sidebar-image">
@@ -187,7 +187,7 @@
                                 </div>
                             </div>
                         </a>
-                    </div>
+                    </div> 
             </div>
 
             
@@ -197,37 +197,37 @@
                 <div id="info-header">
                     <div id="info-header-kiri">
                         <div class="info-header-judul">
-                            <h3>Utang Saya</h3>
+                            <h3>Penjualan</h3>
                         </div>
                         <div class="info-header-isi">
-                            <h1 style="color: 0172B7;">Rp 3.900.000.-</h1>
+                            <h1 style="color: 00A85A;">Rp 6.000.000.-</h1>
                         </div>
                         
                     </div>
                     <div id="info-header-kanan">
                         <div class="info-header-judul">
-                            <h3>Utang Pelanggan</h3>
+                            <h3>Pengeluaran</h3>
                         </div>
                         <div class="info-header-isi">
-                            <h1 style="color: FF861A;">Rp 3.900.000.-</h1>
+                            <h1 style="color: DE4B39;">Rp 6.000.000.-</h1>
                         </div>
                     </div>
                 </div>
 
                 <div id="table-atas">
-                    <a href="utang.php"  id="table-atas-penjualan">
-                        <p>Utang Saya</p>
+                    <a href="penjualan.php"  id="table-atas-penjualan">
+                        <p>Penjualan</p>
                     </a>
 
-                    <a href="piutang.php" id="table-atas-pengeluaran">
-                        <p>Utang Pelanggan</p>
+                    <a href="pengeluaran.php" id="table-atas-pengeluaran">
+                        <p>Pengeluaran</p>
                     </a>
 
                     <div id="table-atas-jarak">
 
                     </div>
-                    <a href="tambah-utang.php" id="table-atas-tambah">
-                        <p>Tambah Utang</p>
+                    <a href="tambah-transaksi.php" id="table-atas-tambah">
+                        <p>Tambah Transaksi</p>
                     </a>
                 </div>
 
@@ -236,15 +236,15 @@
                         <table id="myTable" cellspacing="0">
                             <thead>
                                 <tr>
-                                    <th style="width: 15%;">
+                                    <th style="width: 10%;">
                                         <p>     
                                             Kategori
                                         </p>
                                             
                                     </th>
-                                    <th style="width: 20%;">
+                                    <th style="width: 30%;">
                                         <p>     
-                                            Nama Pemberi
+                                            Nama Penghasilan
                                         </p>
                                     </th>
                                     <th style="width: 25%;" onclick="sortTable(0)">
@@ -252,12 +252,12 @@
                                             Nominal
                                         </p>
                                     </th>
-                                    <th style="width: 15%;" onclick="sortTable(1)">
+                                    <th style="width: 20%;" onclick="sortTable(1)">
                                         <p>     
                                             Tanggal
                                         </p>
                                     </th>
-                                    <th style="width: 25%;">
+                                    <th style="width: 20%;">
                                         <p>
                                             Aksi
                                         </p>
@@ -268,10 +268,10 @@
                             <tbody>
                                 <tr>
                                     <td>
-                                        <p id="table-kategori-pengeluaran">Utang Saya</p> 
+                                        <p id="table-kategori-pengeluaran">Pengeluaran</p> 
                                     </td>
                                     <td>
-                                        <p>Pak budi</p>
+                                        <p>Sepatu Diadoran</p>
                                     </td>
                                     <td>
                                         <p>Rp 1.200.000,-</p> 
@@ -279,19 +279,18 @@
                                     <td>
                                         <p>28-11-2021</p>
                                     </td>
-                                    <td style='white-space: nowrap; overflow: auto;'>
-                                        <button id="tombol-aksi-edit" name="bEdit"><a href="edit-utang.php">Edit</a> </button>
+                                    <td style='white-space: nowrap'>
+                                        <button id="tombol-aksi-edit" name="bEdit"><a href="edit-transaksi-penjualan.php">Edit</a> </button>
                                         <button id="tombol-aksi-hapus" name="bHapus">Hapus</button>
-                                        <button id="tombol-aksi-lunas" name="bLunas">Lunas</button>
                                     </td>
                                 </tr>
         
                                 <tr>
                                     <td>
-                                        <p id="table-kategori-pengeluaran">Utang Saya</p> 
+                                        <p id="table-kategori-pengeluaran">Pengeluaran</p> 
                                     </td>
                                     <td>
-                                        <p>Pak budi</p>
+                                        <p>Sepatu Diadoran</p>
                                     </td>
                                     <td>
                                         <p>Rp 1.500.000,-</p> 
@@ -299,20 +298,18 @@
                                     <td>
                                         <p>21-11-2021</p>
                                     </td>
-                                    <td style='white-space: nowrap; overflow: auto;'>
-
-                                        <button id="tombol-aksi-edit" name="bEdit"><a href="edit-utang.php">Edit</a> </button>
+                                    <td style='white-space: nowrap'>
+                                        <button id="tombol-aksi-edit" name="bEdit"><a href="edit-transaksi-penjualan.php">Edit</a></button>
                                         <button id="tombol-aksi-hapus" name="bHapus">Hapus</button>
-                                        <button id="tombol-aksi-lunas" name="bLunas">Lunas</button>
                                     </td>
                                 </tr>
         
                                 <tr>
                                     <td>
-                                        <p id="table-kategori-pengeluaran">Utang Saya</p> 
+                                        <p id="table-kategori-pengeluaran">Pengeluaran</p> 
                                     </td>
                                     <td>
-                                        <p>Pak budi</p>
+                                        <p>Sepatu Diadoran</p>
                                     </td>
                                     <td>
                                         <p>Rp 1.500.000,-</p> 
@@ -320,19 +317,18 @@
                                     <td>
                                         <p>21-11-2021</p>
                                     </td>
-                                    <td style='white-space: nowrap; overflow: auto;'>
-                                        <button id="tombol-aksi-edit" name="bEdit"><a href="edit-utang.php">Edit</a> </button>
+                                    <td style='white-space: nowrap'>
+                                        <button id="tombol-aksi-edit" name="bEdit"><a href="edit-transaksi-penjualan.php">Edit</a></button>
                                         <button id="tombol-aksi-hapus" name="bHapus">Hapus</button>
-                                        <button id="tombol-aksi-lunas" name="bLunas">Lunas</button>
                                     </td>
                                 </tr>
         
                                 <tr>
                                     <td>
-                                        <p id="table-kategori-pengeluaran">Utang Saya</p> 
+                                        <p id="table-kategori-pengeluaran">Pengeluaran</p> 
                                     </td>
                                     <td>
-                                        <p>Pak budi</p>
+                                        <p>Sepatu Diadoran</p>
                                     </td>
                                     <td>
                                         <p>Rp 1.500.000,-</p> 
@@ -340,19 +336,18 @@
                                     <td>
                                         <p>21-11-2021</p>
                                     </td>
-                                    <td style='white-space: nowrap; overflow: auto;'>
-                                        <button id="tombol-aksi-edit" name="bEdit"><a href="edit-utang.php">Edit</a> </button>
+                                    <td style='white-space: nowrap'>
+                                        <button id="tombol-aksi-edit" name="bEdit"><a href="edit-transaksi-penjualan.php">Edit</a></button>
                                         <button id="tombol-aksi-hapus" name="bHapus">Hapus</button>
-                                        <button id="tombol-aksi-lunas" name="bLunas">Lunas</button>
                                     </td>
                                 </tr>
         
                                 <tr>
                                     <td>
-                                        <p id="table-kategori-pengeluaran">Utang Saya</p> 
+                                        <p id="table-kategori-pengeluaran">Pengeluaran</p> 
                                     </td>
                                     <td>
-                                        <p>Pak budi</p>
+                                        <p>Sepatu Diadoran</p>
                                     </td>
                                     <td>
                                         <p>Rp 1.500.000,-</p> 
@@ -360,19 +355,18 @@
                                     <td>
                                         <p>21-11-2021</p>
                                     </td>
-                                    <td style='white-space: nowrap; overflow: auto;'>
-                                        <button id="tombol-aksi-edit" name="bEdit"><a href="edit-utang.php">Edit</a> </button>
+                                    <td style='white-space: nowrap'>
+                                        <button id="tombol-aksi-edit" name="bEdit"><a href="edit-transaksi-penjualan.php">Edit</a></button>
                                         <button id="tombol-aksi-hapus" name="bHapus">Hapus</button>
-                                        <button id="tombol-aksi-lunas" name="bLunas">Lunas</button>
                                     </td>
                                 </tr>
         
                                 <tr>
                                     <td>
-                                        <p id="table-kategori-pengeluaran">Utang Saya</p> 
+                                        <p id="table-kategori-pengeluaran">Pengeluaran</p> 
                                     </td>
                                     <td>
-                                        <p>Pak budi</p>
+                                        <p>Sepatu Diadoran</p>
                                     </td>
                                     <td>
                                         <p>Rp 1.500.000,-</p> 
@@ -380,19 +374,18 @@
                                     <td>
                                         <p>21-11-2021</p>
                                     </td>
-                                    <td style='white-space: nowrap; overflow: auto;'>
-                                        <button id="tombol-aksi-edit" name="bEdit"><a href="edit-utang.php">Edit</a> </button>
+                                    <td style='white-space: nowrap'>
+                                        <button id="tombol-aksi-edit" name="bEdit"><a href="edit-transaksi-penjualan.php">Edit</a></button>
                                         <button id="tombol-aksi-hapus" name="bHapus">Hapus</button>
-                                        <button id="tombol-aksi-lunas" name="bLunas">Lunas</button>
                                     </td>
                                 </tr>
         
                                 <tr>
                                     <td>
-                                        <p id="table-kategori-pengeluaran">Utang Saya</p> 
+                                        <p id="table-kategori-pengeluaran">Pengeluaran</p> 
                                     </td>
                                     <td>
-                                        <p>Pak budi</p>
+                                        <p>Sepatu Diadoran</p>
                                     </td>
                                     <td>
                                         <p>Rp 1.500.000,-</p> 
@@ -400,19 +393,18 @@
                                     <td>
                                         <p>21-11-2021</p>
                                     </td>
-                                    <td style='white-space: nowrap; overflow: auto;'>
-                                        <button id="tombol-aksi-edit" name="bEdit"><a href="edit-utang.php">Edit</a> </button>
+                                    <td style='white-space: nowrap'>
+                                        <button id="tombol-aksi-edit" name="bEdit"><a href="edit-transaksi-penjualan.php">Edit</a></button>
                                         <button id="tombol-aksi-hapus" name="bHapus">Hapus</button>
-                                        <button id="tombol-aksi-lunas" name="bLunas">Lunas</button>
                                     </td>
                                 </tr>
         
                                 <tr>
                                     <td>
-                                        <p id="table-kategori-pengeluaran">Utang Saya</p> 
+                                        <p id="table-kategori-pengeluaran">Pengeluaran</p> 
                                     </td>
                                     <td>
-                                        <p>Pak budi</p>
+                                        <p>Sepatu Diadoran</p>
                                     </td>
                                     <td>
                                         <p>Rp 1.500.000,-</p> 
@@ -420,10 +412,9 @@
                                     <td>
                                         <p>21-11-2021</p>
                                     </td>
-                                    <td style='white-space: nowrap; overflow: auto;'>
-                                        <button id="tombol-aksi-edit" name="bEdit"><a href="edit-utang.php">Edit</a> </button>
+                                    <td style='white-space: nowrap'>
+                                        <button id="tombol-aksi-edit" name="bEdit"><a href="edit-transaksi-penjualan.php">Edit</a></button>
                                         <button id="tombol-aksi-hapus" name="bHapus">Hapus</button>
-                                        <button id="tombol-aksi-lunas" name="bLunas">Lunas</button>
                                     </td>
                                 </tr>
 
@@ -445,7 +436,7 @@
 
         
 
-       <div id="footer">
+        <div id="footer">
             <h4>Copyright@2021 Team ALOHA </h4>
         </div>
     </div>
