@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 13, 2021 at 08:47 AM
+-- Generation Time: Dec 13, 2021 at 04:15 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -42,7 +42,8 @@ CREATE TABLE `catatankeuangan` (
 
 INSERT INTO `catatankeuangan` (`id`, `jumlah`, `tanggal`, `keterangan`, `id_pengguna`, `id_subkategori`) VALUES
 (1, 5000000, '2021-12-06', 'Sepatu Nike', 1, 1),
-(2, 100000, '2020-12-09', 'Sepatu Converse', 1, 2);
+(2, 100000, '2020-12-09', 'Sepatu Converse', 1, 2),
+(3, 1250000, '2021-12-08', 'Sepatu Tes', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -53,12 +54,21 @@ INSERT INTO `catatankeuangan` (`id`, `jumlah`, `tanggal`, `keterangan`, `id_peng
 CREATE TABLE `catatanutang` (
   `id` int(255) NOT NULL,
   `jumlah` int(255) NOT NULL,
-  `tanggal` int(255) NOT NULL,
-  `keterangan` varchar(255) NOT NULL,
+  `tanggal` date NOT NULL,
   `id_pengguna` int(255) NOT NULL,
   `id_subkategori` int(255) NOT NULL,
   `id_instansi` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `catatanutang`
+--
+
+INSERT INTO `catatanutang` (`id`, `jumlah`, `tanggal`, `id_pengguna`, `id_subkategori`, `id_instansi`) VALUES
+(1, 25000, '2021-12-01', 1, 4, 2),
+(29, 1231233, '2021-08-04', 1, 4, 1),
+(35, 25000, '2021-12-15', 1, 4, 4),
+(37, 1223, '2021-12-14', 1, 3, 2);
 
 -- --------------------------------------------------------
 
@@ -68,7 +78,7 @@ CREATE TABLE `catatanutang` (
 
 CREATE TABLE `instansi` (
   `id` int(255) NOT NULL,
-  `nama` varchar(255) NOT NULL
+  `nama` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -129,7 +139,8 @@ CREATE TABLE `pengguna` (
 INSERT INTO `pengguna` (`id`, `username`, `password`, `email`, `nohp`) VALUES
 (1, 'rama', '1234', 'fahri279', 23231322),
 (2, 'rama', 'rama', '1234', 1234),
-(3, 'helmi', 'helmi', 'helmi@gmail.com', 88888888);
+(3, 'helmi', 'helmi', 'helmi@gmail.com', 88888888),
+(4, 'admin', '1234', '123@gmail.com', 2147483647);
 
 -- --------------------------------------------------------
 
@@ -231,13 +242,13 @@ ALTER TABLE `targetpencapaian`
 -- AUTO_INCREMENT for table `catatankeuangan`
 --
 ALTER TABLE `catatankeuangan`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `catatanutang`
 --
 ALTER TABLE `catatanutang`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT for table `instansi`
@@ -255,7 +266,7 @@ ALTER TABLE `kategoricatatan`
 -- AUTO_INCREMENT for table `pengguna`
 --
 ALTER TABLE `pengguna`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `subkategori`
