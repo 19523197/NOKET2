@@ -8,6 +8,14 @@
 
     $sql2 = "SELECT sk.nama, ck.keterangan , ck.jumlah, ck.tanggal FROM catatankeuangan ck INNER JOIN subkategori sk ON ck.id_subkategori = sk.id INNER JOIN kategoricatatan kc ON sk.id_kategori = kc.id WHERE ck.id_pengguna = '$_SESSION[id]' AND sk.id_kategori = 2;" ;
     $result2 = mysqli_query($conn, $sql2);
+
+    $sql3 = "SELECT SUM(ck.jumlah) AS jumlah FROM catatankeuangan ck INNER JOIN subkategori sk ON ck.id_subkategori = sk.id WHERE sk.id = 1;";
+    $result3 = mysqli_query($conn, $sql3);
+    $row3 = mysqli_fetch_assoc($result3);
+
+    $sql4 = "SELECT SUM(ck.jumlah) AS jumlah FROM catatankeuangan ck INNER JOIN subkategori sk ON ck.id_subkategori = sk.id WHERE sk.id = 2;";
+    $result4 = mysqli_query($conn, $sql4);
+    $row4 = mysqli_fetch_assoc($result4);
 ?>
 
 <html>
@@ -212,7 +220,7 @@
                             <h3>Penjualan</h3>
                         </div>
                         <div class="info-header-isi">
-                            <h1 style="color: 00A85A;">Rp 6.000.000.-</h1>
+                            <h1 style="color: 00A85A;">Rp <?php echo $row3['jumlah'] ;?>.-</h1>
                         </div>
                         
                     </div>
@@ -221,7 +229,7 @@
                             <h3>Pengeluaran</h3>
                         </div>
                         <div class="info-header-isi">
-                            <h1 style="color: DE4B39;">Rp 6.000.000.-</h1>
+                            <h1 style="color: DE4B39;">Rp <?php echo $row4['jumlah'] ;?>.-</h1>
                         </div>
                     </div>
                 </div>
@@ -269,7 +277,7 @@
                                             Tanggal
                                         </p>
                                     </th>
-                                    <th style="width: 20%;">
+                                    <th style="width: 25%;">
                                         <p>
                                             Aksi
                                         </p>
@@ -291,146 +299,7 @@
                                 }
                                 ?>
         
-                                <tr>
-                                    <td>
-                                        <p id="table-kategori-pengeluaran">Pengeluaran</p> 
-                                    </td>
-                                    <td>
-                                        <p>Sepatu Diadoran</p>
-                                    </td>
-                                    <td>
-                                        <p>Rp 1.500.000,-</p> 
-                                    </td>
-                                    <td>
-                                        <p>21-11-2021</p>
-                                    </td>
-                                    <td style='white-space: nowrap; overflow: auto;'>
-
-                                        <button id="tombol-aksi-edit" name="bEdit"><a href="edit-transaksi-pengeluaran.php">Edit</a></button>
-                                        <button id="tombol-aksi-hapus" name="bHapus">Hapus</button>
-                                        
-                                    </td>
-                                </tr>
-        
-                                <tr>
-                                    <td>
-                                        <p id="table-kategori-pengeluaran">Pengeluaran</p> 
-                                    </td>
-                                    <td>
-                                        <p>Sepatu Diadoran</p>
-                                    </td>
-                                    <td>
-                                        <p>Rp 1.500.000,-</p> 
-                                    </td>
-                                    <td>
-                                        <p>21-11-2021</p>
-                                    </td>
-                                    <td style='white-space: nowrap; overflow: auto;'>
-                                        <button id="tombol-aksi-edit" name="bEdit"><a href="edit-transaksi-pengeluaran.php">Edit</a></button>
-                                        <button id="tombol-aksi-hapus" name="bHapus">Hapus</button>
-                                        
-                                    </td>
-                                </tr>
-        
-                                <tr>
-                                    <td>
-                                        <p id="table-kategori-pengeluaran">Pengeluaran</p> 
-                                    </td>
-                                    <td>
-                                        <p>Sepatu Diadoran</p>
-                                    </td>
-                                    <td>
-                                        <p>Rp 1.500.000,-</p> 
-                                    </td>
-                                    <td>
-                                        <p>21-11-2021</p>
-                                    </td>
-                                    <td style='white-space: nowrap; overflow: auto;'>
-                                        <button id="tombol-aksi-edit" name="bEdit"><a href="edit-transaksi-pengeluaran.php">Edit</a></button>
-                                        <button id="tombol-aksi-hapus" name="bHapus">Hapus</button>
-                                        
-                                    </td>
-                                </tr>
-        
-                                <tr>
-                                    <td>
-                                        <p id="table-kategori-pengeluaran">Pengeluaran</p> 
-                                    </td>
-                                    <td>
-                                        <p>Sepatu Diadoran</p>
-                                    </td>
-                                    <td>
-                                        <p>Rp 1.500.000,-</p> 
-                                    </td>
-                                    <td>
-                                        <p>21-11-2021</p>
-                                    </td>
-                                    <td style='white-space: nowrap; overflow: auto;'>
-                                        <button id="tombol-aksi-edit" name="bEdit"><a href="edit-transaksi-pengeluaran.php">Edit</a></button>
-                                        <button id="tombol-aksi-hapus" name="bHapus">Hapus</button>
-                                       
-                                    </td>
-                                </tr>
-        
-                                <tr>
-                                    <td>
-                                        <p id="table-kategori-pengeluaran">Pengeluaran</p> 
-                                    </td>
-                                    <td>
-                                        <p>Sepatu Diadoran</p>
-                                    </td>
-                                    <td>
-                                        <p>Rp 1.500.000,-</p> 
-                                    </td>
-                                    <td>
-                                        <p>21-11-2021</p>
-                                    </td>
-                                    <td style='white-space: nowrap; overflow: auto;'>
-                                        <button id="tombol-aksi-edit" name="bEdit"><a href="edit-transaksi-pengeluaran.php">Edit</a></button>
-                                        <button id="tombol-aksi-hapus" name="bHapus">Hapus</button>
-                                        
-                                    </td>
-                                </tr>
-        
-                                <tr>
-                                    <td>
-                                        <p id="table-kategori-pengeluaran">Pengeluaran</p> 
-                                    </td>
-                                    <td>
-                                        <p>Sepatu Diadoran</p>
-                                    </td>
-                                    <td>
-                                        <p>Rp 1.500.000,-</p> 
-                                    </td>
-                                    <td>
-                                        <p>21-11-2021</p>
-                                    </td>
-                                    <td style='white-space: nowrap; overflow: auto;'>
-                                        <button id="tombol-aksi-edit" name="bEdit"><a href="edit-transaksi-pengeluaran.php">Edit</a></button>
-                                        <button id="tombol-aksi-hapus" name="bHapus">Hapus</button>
-                                        
-                                    </td>
-                                </tr>
-        
-                                <tr>
-                                    <td>
-                                        <p id="table-kategori-pengeluaran">Pengeluaran</p> 
-                                    </td>
-                                    <td>
-                                        <p>Sepatu Diadoran</p>
-                                    </td>
-                                    <td>
-                                        <p>Rp 1.500.000,-</p> 
-                                    </td>
-                                    <td>
-                                        <p>21-11-2021</p>
-                                    </td>
-                                    <td style='white-space: nowrap; overflow: auto;'>
-                                        <button id="tombol-aksi-edit" name="bEdit"><a href="edit-transaksi-pengeluaran.php">Edit</a></button>
-                                        <button id="tombol-aksi-hapus" name="bHapus">Hapus</button>
-                                        
-                                    </td>
-                                </tr>
+                                
 
                                 
                             </tbody>

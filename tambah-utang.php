@@ -1,3 +1,17 @@
+<?php
+
+    include 'php/koneksi.php';
+    session_start();
+
+    $sql = "SELECT * FROM pengguna WHERE username = '$_SESSION[username]'" ;
+    $result = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_assoc($result);
+
+    $sql2 = "SELECT nama FROM instansi" ;
+    $result2 = mysqli_query($conn, $sql2);
+
+?>
+
 <html>
     <head>
         <meta charset="utf-8">
@@ -194,7 +208,7 @@
             
             <div id="content-card">
                 <div id="content-container">
-                    <form action="#" method="POST">
+                    <form action="php/input-utang.php" method="POST">
                         <a href="utang.php" style="color:929292; text-decoration: none; margin-top:5%;">Kembali</a>
                         <div class="laporan-container">
                             <div class="laporan-card">
@@ -203,27 +217,29 @@
                                 </div>
                                 <div class="laporan-card-main1">
                                     <label for="input-instansi">Instansi</label>
-                                    <select name="input-instansi" id="">
-                                        <option value="">Pak Tywin</option>
-                                        <option value="">Bu Arya</option>
-                                        <option value="">Bu Sansa</option>
+                                    <select name="instansi" id="">
+                                    <?php
+                                        while($row2 = mysqli_fetch_assoc($result2)) {
+                                            echo "<option value='".$row2["nama"]."'>$row2[nama]</option>";
+                                        }
+                                    ?>
                                     </select>
                                 </div>
                                 <div class="laporan-card-main2">
                                     <label for="input-jenis">Jenis</label>
-                                    <select name="input-jenis" id="">
-                                        <option value="penjualan">Utang</option>
-                                        <option value="pengeluaran">Piutang</option>
+                                    <select name="kategori" id="">
+                                        <option value="utang">Utang</option>
+                                        <option value="piutang">Piutang</option>
                                     </select>
                                 </div>
                                 
                                 <div class="laporan-card-main4">
                                     <label for="input-nominal">Nominal</label>
-                                    <input type="number" name="input-nominal" id="">
+                                    <input type="number" name="jumlah" id="">
                                 </div>
                                 <div class="laporan-card-main5">
                                     <label for="input-tanggal" style="display: block;">Tanggal</label>
-                                    <input type="date" name="input-tanggal" id="">
+                                    <input type="date" name="tanggal" id="">
                                 </div>
                                 <div class="laporan-card-button">
                                     <input type="submit" name="" id="" value="Tambah">
