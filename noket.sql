@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 09, 2021 at 02:53 PM
+-- Generation Time: Dec 13, 2021 at 08:47 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -36,6 +36,14 @@ CREATE TABLE `catatankeuangan` (
   `id_subkategori` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `catatankeuangan`
+--
+
+INSERT INTO `catatankeuangan` (`id`, `jumlah`, `tanggal`, `keterangan`, `id_pengguna`, `id_subkategori`) VALUES
+(1, 5000000, '2021-12-06', 'Sepatu Nike', 1, 1),
+(2, 100000, '2020-12-09', 'Sepatu Converse', 1, 2);
+
 -- --------------------------------------------------------
 
 --
@@ -48,8 +56,36 @@ CREATE TABLE `catatanutang` (
   `tanggal` int(255) NOT NULL,
   `keterangan` varchar(255) NOT NULL,
   `id_pengguna` int(255) NOT NULL,
-  `id_subkategori` int(255) NOT NULL
+  `id_subkategori` int(255) NOT NULL,
+  `id_instansi` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `instansi`
+--
+
+CREATE TABLE `instansi` (
+  `id` int(255) NOT NULL,
+  `nama` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `instansi`
+--
+
+INSERT INTO `instansi` (`id`, `nama`) VALUES
+(1, 'Jon Setiawan'),
+(2, 'Helmi Raihan'),
+(3, 'Rama Fachri'),
+(4, 'Suryo Guritno'),
+(5, 'Simu Law'),
+(6, 'Dony Adam'),
+(7, 'Julia Mulia'),
+(8, 'Ela Citra'),
+(9, 'Candra Kirana'),
+(10, 'Purnama Lestari');
 
 -- --------------------------------------------------------
 
@@ -61,6 +97,16 @@ CREATE TABLE `kategoricatatan` (
   `id` int(255) NOT NULL,
   `nama` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `kategoricatatan`
+--
+
+INSERT INTO `kategoricatatan` (`id`, `nama`) VALUES
+(1, 'penjualan'),
+(2, 'pengeluaran'),
+(3, 'utang'),
+(4, 'piutang');
 
 -- --------------------------------------------------------
 
@@ -97,6 +143,17 @@ CREATE TABLE `subkategori` (
   `id_kategori` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `subkategori`
+--
+
+INSERT INTO `subkategori` (`id`, `nama`, `id_kategori`) VALUES
+(1, 'barang', 1),
+(2, 'suplai', 2),
+(3, 'piutang', 4),
+(4, 'utang', 3),
+(5, 'pembaruan', 2);
+
 -- --------------------------------------------------------
 
 --
@@ -121,14 +178,23 @@ CREATE TABLE `targetpencapaian` (
 --
 ALTER TABLE `catatankeuangan`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `id_pengguna` (`id_pengguna`,`id_subkategori`);
+  ADD KEY `id_pengguna` (`id_pengguna`,`id_subkategori`),
+  ADD KEY `id_subkategori` (`id_subkategori`);
 
 --
 -- Indexes for table `catatanutang`
 --
 ALTER TABLE `catatanutang`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `id_pengguna` (`id_pengguna`,`id_subkategori`);
+  ADD KEY `id_pengguna` (`id_pengguna`,`id_subkategori`),
+  ADD KEY `id_subkategori` (`id_subkategori`),
+  ADD KEY `id_instansi` (`id_instansi`);
+
+--
+-- Indexes for table `instansi`
+--
+ALTER TABLE `instansi`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `kategoricatatan`
@@ -165,7 +231,7 @@ ALTER TABLE `targetpencapaian`
 -- AUTO_INCREMENT for table `catatankeuangan`
 --
 ALTER TABLE `catatankeuangan`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `catatanutang`
@@ -174,10 +240,16 @@ ALTER TABLE `catatanutang`
   MODIFY `id` int(255) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `instansi`
+--
+ALTER TABLE `instansi`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
 -- AUTO_INCREMENT for table `kategoricatatan`
 --
 ALTER TABLE `kategoricatatan`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `pengguna`
@@ -189,13 +261,44 @@ ALTER TABLE `pengguna`
 -- AUTO_INCREMENT for table `subkategori`
 --
 ALTER TABLE `subkategori`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `targetpencapaian`
 --
 ALTER TABLE `targetpencapaian`
   MODIFY `id` int(255) NOT NULL AUTO_INCREMENT;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `catatankeuangan`
+--
+ALTER TABLE `catatankeuangan`
+  ADD CONSTRAINT `catatankeuangan_ibfk_1` FOREIGN KEY (`id_pengguna`) REFERENCES `pengguna` (`id`),
+  ADD CONSTRAINT `catatankeuangan_ibfk_2` FOREIGN KEY (`id_subkategori`) REFERENCES `subkategori` (`id`);
+
+--
+-- Constraints for table `catatanutang`
+--
+ALTER TABLE `catatanutang`
+  ADD CONSTRAINT `catatanutang_ibfk_1` FOREIGN KEY (`id_pengguna`) REFERENCES `pengguna` (`id`),
+  ADD CONSTRAINT `catatanutang_ibfk_2` FOREIGN KEY (`id_subkategori`) REFERENCES `subkategori` (`id`),
+  ADD CONSTRAINT `catatanutang_ibfk_3` FOREIGN KEY (`id_instansi`) REFERENCES `instansi` (`id`);
+
+--
+-- Constraints for table `subkategori`
+--
+ALTER TABLE `subkategori`
+  ADD CONSTRAINT `subkategori_ibfk_1` FOREIGN KEY (`id_kategori`) REFERENCES `kategoricatatan` (`id`);
+
+--
+-- Constraints for table `targetpencapaian`
+--
+ALTER TABLE `targetpencapaian`
+  ADD CONSTRAINT `targetpencapaian_ibfk_1` FOREIGN KEY (`id_pengguna`) REFERENCES `pengguna` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
