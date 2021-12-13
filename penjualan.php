@@ -1,3 +1,15 @@
+<?php
+    include 'php/koneksi.php';
+    session_start();
+
+    $sql = "SELECT * FROM pengguna WHERE username = '$_SESSION[username]'" ;
+    $result = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_assoc($result);
+
+    $sql2 = "SELECT sk.nama, ck.keterangan , ck.jumlah, ck.tanggal FROM catatankeuangan ck INNER JOIN subkategori sk ON ck.id_subkategori = sk.id INNER JOIN kategoricatatan kc ON sk.id_kategori = kc.id WHERE ck.id_pengguna = '$_SESSION[id]' AND sk.id_kategori = 1;" ;
+    $result2 = mysqli_query($conn, $sql2);
+?>
+
 <html>
     <head>
         <meta charset="utf-8">
@@ -36,7 +48,7 @@
                 <div class="sidebar-item-profile">
                     <div id="sidebar-image-container">
                         <img src="foto/avatar-icon.png" alt="#" id="sidebar-image-profile">
-                        <h1>Admin</h1>   
+                        <h1><?php echo $row['username'];?></h1>   
                     </div>
                 </div>
                 
@@ -266,24 +278,18 @@
                             </thead>
 
                             <tbody>
-                                <tr>
-                                    <td>
-                                        <p id="table-kategori-pengeluaran">Pengeluaran</p> 
-                                    </td>
-                                    <td>
-                                        <p>Sepatu Diadoran</p>
-                                    </td>
-                                    <td>
-                                        <p>Rp 1.200.000,-</p> 
-                                    </td>
-                                    <td>
-                                        <p>28-11-2021</p>
-                                    </td>
-                                    <td style='white-space: nowrap'>
-                                        <button id="tombol-aksi-edit" name="bEdit"><a href="edit-transaksi-penjualan.php">Edit</a> </button>
-                                        <button id="tombol-aksi-hapus" name="bHapus">Hapus</button>
-                                    </td>
-                                </tr>
+                            <?php
+                                while($row2 = mysqli_fetch_assoc($result2)) {
+                                    echo "<tr>
+                                        <td><p id='table-kategori-pengeluaran' style='font-weight:bold;'>".$row2['nama']."</p></td>
+                                        <td><p>".$row2['keterangan']."</p></td>
+                                        <td><p>RP ".$row2['jumlah']."-</p></td>
+                                        <td><p>".$row2['tanggal']."</p></td>
+                                        <td><button id='tombol-aksi-edit' name='bEdit'><a href='edit-transaksi-penjualan.php'>Edit</a></button>
+                                        <button id='tombol-aksi-hapus' name='bHapus'>Hapus</button></td>
+                                    </tr>";
+                                }
+                                ?>
         
                                 <tr>
                                     <td>

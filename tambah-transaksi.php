@@ -1,3 +1,15 @@
+<?php
+    include 'php/koneksi.php';
+    session_start();
+
+    $sql = "SELECT nama FROM subkategori";
+    $result = mysqli_query($conn, $sql);
+    
+    
+   
+    
+?>
+
 <html>
     <head>
         <meta charset="utf-8">
@@ -194,7 +206,7 @@
             
             <div id="content-card">
                 <div id="content-container">
-                    <form action="#" method="POST">
+                    <form action="php/input-transaksi.php" method="POST">
                         <a href="penjualan.php" style="color:929292; text-decoration: none; margin-top:5%;">Kembali</a>
                         <div class="laporan-container">
                             <div class="laporan-card">
@@ -203,29 +215,28 @@
                                 </div>
                                 <div class="laporan-card-main1">
                                     <label for="input-deskripsi">Deskripsi</label>
-                                    <input type="text" name="input-deskripsi" id="">
+                                    <input type="text" name="keterangan" id="">
                                 </div>
                                 <div class="laporan-card-main2">
                                     <label for="input-jenis">Jenis</label>
-                                    <select name="input-jenis" id="">
+                                    <select name="kategori" id="">
                                         <option value="penjualan">Penjualan</option>
                                         <option value="pengeluaran">Pengeluaran</option>
                                     </select>
                                 </div>
                                 <div class="laporan-card-main3">
                                     <label for="input-kategori">Kategori</label>
-                                    <select name="input-kategori" id="">
-                                        <option value="penjualan">Penjualan</option>
-                                        <option value="pengeluaran">Penjualan</option>
+                                    <select name="subkategori" id="subkategori">
+                                    
                                     </select>
                                 </div>
                                 <div class="laporan-card-main4">
                                     <label for="input-nominal">Nominal</label>
-                                    <input type="number" name="input-nominal" id="">
+                                    <input type="number" name="jumlah" id="">
                                 </div>
                                 <div class="laporan-card-main5">
                                     <label for="input-tanggal" style="display: block;">Tanggal</label>
-                                    <input type="date" name="input-tanggal" id="">
+                                    <input type="date" name="tanggal" id="">
                                 </div>
                                 <div class="laporan-card-button">
                                     <input type="submit" name="" id="" value="Tambah">
