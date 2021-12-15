@@ -24,7 +24,7 @@
                 <nav>
                         <ul class="navbarMenu">
                             <li><h3><a href="index.php">Landing Page</a></h3></li>
-                            <li><h3><a href="#">Log In</a></h3></li>
+                            <li><h3><a href="login.php">Log In</a></h3></li>
                             <li><h3><a href="#" id="selected">Sign Up</a></h3></li>
                         </ul>
                 </nav>
