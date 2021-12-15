@@ -197,16 +197,7 @@
                             </div>
                         </a>
         
-                        <a href="index.php" class="collapse-item-container">
-                            <div class="collapse-item-2">
-                                <div id="collapse-item-icon">
-                                    <img src="foto/icons8-wallet-90.png" alt="" id="sidebar-image">
-                                </div>
-                                <div class="sidebar-item-text">
-                                    <h4>Saldo</h4>
-                                </div>
-                            </div>
-                        </a>
+                        
                     </div> 
             </div>
 
