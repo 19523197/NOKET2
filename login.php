@@ -75,7 +75,7 @@
         
 
         <div id="footer">
-            <h4>Copyright@2021 Team ALOHA </h4>
+            <p><font face="Century Gothic">Copyright@2021 Team ALOHA</font></p>
         </div>
     </div>
     </body>
