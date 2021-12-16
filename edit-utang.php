@@ -1,3 +1,24 @@
+<?php
+
+include 'php/koneksi.php';
+    session_start();
+
+    $sql = "SELECT * FROM pengguna WHERE username = '$_SESSION[username]'" ;
+    $result = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_assoc($result);
+
+    //select catatanutang
+    $sql2 = "SELECT * FROM catatanutang cu INNER JOIN subkategori sk ON cu.id_subkategori = sk.id WHERE cu.id = '$_GET[id]'";
+    $result2 = mysqli_query($conn, $sql2);
+    $row2 = mysqli_fetch_assoc($result2);
+
+    //select instansi
+    $sql3 = "SELECT * FROM instansi";
+    $result3 = mysqli_query($conn, $sql3);
+    
+
+?>
+
 <html>
     <head>
         <meta charset="utf-8">
@@ -36,7 +57,7 @@
                 <div class="sidebar-item-profile">
                     <div id="sidebar-image-container">
                         <img src="foto/avatar-icon.png" alt="#" id="sidebar-image-profile">
-                        <h1>Admin</h1>   
+                        <h1><?php echo $_SESSION['username']; ?></h1>   
                     </div>
                 </div>
                 
@@ -185,7 +206,7 @@
             
             <div id="content-card">
                 <div id="content-container">
-                    <form action="#" method="POST">
+                    <form action="php/edit.php?id=<?php echo $_GET['id'];?>" method="POST">
                         <a href="utang.php" style="color:929292; text-decoration: none; margin-top:5%;">Kembali</a>
                         <div class="laporan-container">
                             <div class="laporan-card">
@@ -194,21 +215,30 @@
                                 </div>
                                 <div class="laporan-card-main1">
                                     <label for="input-instansi">Instansi</label>
-                                    <select name="input-instansi" id="">
-                                        <option value="">Bu katelyn</option>
-                                        <option value="">Pak Jami</option>
-                                        <option value="">Pak Bron</option>
+                                    <select name="instansi" id="">
+                                        <?php
+                                            while($row3 = mysqli_fetch_assoc($result3)) {
+                                                if($row3['id'] == $row2['id_instansi'])
+                                                {
+                                                    echo "<option value='".$row3["nama"]."' selected>$row3[nama]</option>";
+                                                }
+                                                else
+                                                {
+                                                    echo "<option value='".$row3["nama"]."' >$row3[nama]</option>";
+                                                }
+                                            }
+                                        ?>
                                     </select>
                                 </div>
                                 
                                
                                 <div class="laporan-card-main4">
                                     <label for="input-nominal">Nominal</label>
-                                    <input type="number" name="input-nominal" id="">
+                                    <input type="number" name="nominal" id="" value="<?php echo $row2['jumlah'];?>">
                                 </div>
                                 <div class="laporan-card-main5">
                                     <label for="input-tanggal" style="display: block;">Tanggal</label>
-                                    <input type="date" name="input-tanggal" id="">
+                                    <input type="date" name="tanggal" id="" value="<?php echo $row2['tanggal'];?>">
                                 </div>
                                 <div class="laporan-card-button">
                                     <input type="submit" name="" id="" value="Edit">

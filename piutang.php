@@ -7,7 +7,7 @@
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_assoc($result);
 
-    $sql2 = "SELECT sk.nama AS kategori, i.nama AS nama , cu.jumlah, cu.tanggal FROM catatanutang cu INNER JOIN subkategori sk ON cu.id_subkategori = sk.id INNER JOIN kategoricatatan kc ON sk.id_kategori = kc.id INNER JOIN instansi i ON cu.id_instansi = i.id WHERE cu.id_pengguna = '$_SESSION[id]' AND sk.id_kategori = 4;" ;
+    $sql2 = "SELECT cu.id AS id ,sk.nama AS kategori, i.nama AS nama , cu.jumlah, cu.tanggal FROM catatanutang cu INNER JOIN subkategori sk ON cu.id_subkategori = sk.id INNER JOIN kategoricatatan kc ON sk.id_kategori = kc.id INNER JOIN instansi i ON cu.id_instansi = i.id WHERE cu.id_pengguna = '$_SESSION[id]' AND sk.id_kategori = 4;" ;
     $result2 = mysqli_query($conn, $sql2);
 
     //Query total utang
@@ -289,9 +289,9 @@
                                             <td><p>RP ".$row2['jumlah']."-</p></td>
                                             <td><p>".$row2['tanggal']."</p></td>
                                             <td style='white-space: nowrap; overflow: auto;'>
-                                        <button id='tombol-aksi-edit' name='bEdit'><a href='edit-utang.php'>Edit</a> </button>
-                                        <button id='tombol-aksi-hapus' name='bHapus'>Hapus</button>
-                                        <button id='tombol-aksi-lunas' name='bLunas'>Lunas</button>
+                                        <a href='edit-utang.php?id=".$row2['id']."'><button id='tombol-aksi-edit' name='bEdit'>Edit </button></a>
+                                        <a href='php/hapus.php?id=".$row2['id']."'><button id='tombol-aksi-hapus' name='bHapus'>Hapus</button></a>
+                                        <a href='php/hapus.php?id=".$row2['id']."'><button id='tombol-aksi-lunas' name='bLunas'>Lunas</button></a>
                                     </td>
                                         </tr>";
                                     }

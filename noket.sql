@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 13, 2021 at 04:15 PM
+-- Generation Time: Dec 16, 2021 at 05:53 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -41,9 +41,9 @@ CREATE TABLE `catatankeuangan` (
 --
 
 INSERT INTO `catatankeuangan` (`id`, `jumlah`, `tanggal`, `keterangan`, `id_pengguna`, `id_subkategori`) VALUES
-(1, 5000000, '2021-12-06', 'Sepatu Nike', 1, 1),
 (2, 100000, '2020-12-09', 'Sepatu Converse', 1, 2),
-(3, 1250000, '2021-12-08', 'Sepatu Tes', 1, 1);
+(3, 1250000, '2021-12-08', 'Sepatu Tes', 1, 1),
+(4, 400, '2021-12-08', 'Helmi tes', 1, 6);
 
 -- --------------------------------------------------------
 
@@ -59,16 +59,6 @@ CREATE TABLE `catatanutang` (
   `id_subkategori` int(255) NOT NULL,
   `id_instansi` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `catatanutang`
---
-
-INSERT INTO `catatanutang` (`id`, `jumlah`, `tanggal`, `id_pengguna`, `id_subkategori`, `id_instansi`) VALUES
-(1, 25000, '2021-12-01', 1, 4, 2),
-(29, 1231233, '2021-08-04', 1, 4, 1),
-(35, 25000, '2021-12-15', 1, 4, 4),
-(37, 1223, '2021-12-14', 1, 3, 2);
 
 -- --------------------------------------------------------
 
@@ -159,11 +149,12 @@ CREATE TABLE `subkategori` (
 --
 
 INSERT INTO `subkategori` (`id`, `nama`, `id_kategori`) VALUES
-(1, 'barang', 1),
+(1, 'produk offline', 1),
 (2, 'suplai', 2),
 (3, 'piutang', 4),
 (4, 'utang', 3),
-(5, 'pembaruan', 2);
+(5, 'pembaruan', 2),
+(6, 'produk online', 1);
 
 -- --------------------------------------------------------
 
@@ -242,13 +233,13 @@ ALTER TABLE `targetpencapaian`
 -- AUTO_INCREMENT for table `catatankeuangan`
 --
 ALTER TABLE `catatankeuangan`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `catatanutang`
 --
 ALTER TABLE `catatanutang`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT for table `instansi`
@@ -272,7 +263,7 @@ ALTER TABLE `pengguna`
 -- AUTO_INCREMENT for table `subkategori`
 --
 ALTER TABLE `subkategori`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `targetpencapaian`
