@@ -16,7 +16,6 @@ include 'php/koneksi.php';
     $sql3 = "SELECT * FROM instansi";
     $result3 = mysqli_query($conn, $sql3);
     
-
 ?>
 
 <html>

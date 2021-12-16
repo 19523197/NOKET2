@@ -198,7 +198,7 @@
             
             <div id="content-card">
                 <div id="content-container">
-                    <form action="#" method="POST">
+                    <form action="php/input-transaksi.php" method="POST">
                         <a href="pengeluaran.php" style="color:929292; text-decoration: none; margin-top:5%;">Kembali</a>
                         <div class="laporan-container">
                             <div class="laporan-card">
@@ -207,23 +207,23 @@
                                 </div>
                                 <div class="laporan-card-main1">
                                     <label for="input-deskripsi">Deskripsi</label>
-                                    <input type="text" name="input-deskripsi" id="">
+                                    <input type="text" name="deskripsi" id="">
                                 </div>
                                 
                                 <div class="laporan-card-main3">
                                     <label for="input-kategori">Kategori</label>
-                                    <select name="input-kategori" id="">
-                                        <option value="suplai">Suplai Alat dan Barang</option>
-                                        <option value="pembaruan">Pembaruan dan Pembangunan</option>
+                                    <select name="kategori" id="">
+                                        <option value="suplai alat dan barang">Suplai Alat dan Barang</option>
+                                        <option value="pembaruan dan pembangunan">Pembaruan dan Pembangunan</option>
                                     </select>
                                 </div>
                                 <div class="laporan-card-main4">
                                     <label for="input-nominal">Nominal</label>
-                                    <input type="number" name="input-nominal" id="">
+                                    <input type="number" name="nominal" id="">
                                 </div>
                                 <div class="laporan-card-main5">
                                     <label for="input-tanggal" style="display: block;">Tanggal</label>
-                                    <input type="date" name="input-tanggal" id="">
+                                    <input type="date" name="tanggal" id="">
                                 </div>
                                 <div class="laporan-card-button">
                                     <input type="submit" name="" id="" value="Edit">

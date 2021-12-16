@@ -6,14 +6,14 @@
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_assoc($result);
 
-    $sql2 = "SELECT sk.nama, ck.keterangan , ck.jumlah, ck.tanggal FROM catatankeuangan ck INNER JOIN subkategori sk ON ck.id_subkategori = sk.id INNER JOIN kategoricatatan kc ON sk.id_kategori = kc.id WHERE ck.id_pengguna = '$_SESSION[id]' AND sk.id_kategori = 2;" ;
+    $sql2 = "SELECT ck.id AS id, sk.nama, ck.keterangan , ck.jumlah, ck.tanggal FROM catatankeuangan ck INNER JOIN subkategori sk ON ck.id_subkategori = sk.id INNER JOIN kategoricatatan kc ON sk.id_kategori = kc.id WHERE ck.id_pengguna = '$_SESSION[id]' AND sk.id_kategori = 2;" ;
     $result2 = mysqli_query($conn, $sql2);
 
-    $sql3 = "SELECT SUM(ck.jumlah) AS jumlah FROM catatankeuangan ck INNER JOIN subkategori sk ON ck.id_subkategori = sk.id WHERE sk.id = 1;";
+    $sql3 = "SELECT SUM(ck.jumlah) AS jumlah FROM catatankeuangan ck INNER JOIN subkategori sk ON ck.id_subkategori = sk.id WHERE sk.id_kategori = 1;";
     $result3 = mysqli_query($conn, $sql3);
     $row3 = mysqli_fetch_assoc($result3);
 
-    $sql4 = "SELECT SUM(ck.jumlah) AS jumlah FROM catatankeuangan ck INNER JOIN subkategori sk ON ck.id_subkategori = sk.id WHERE sk.id = 2;";
+    $sql4 = "SELECT SUM(ck.jumlah) AS jumlah FROM catatankeuangan ck INNER JOIN subkategori sk ON ck.id_subkategori = sk.id WHERE sk.id_kategori = 2;";
     $result4 = mysqli_query($conn, $sql4);
     $row4 = mysqli_fetch_assoc($result4);
 ?>
@@ -247,13 +247,13 @@
                         <table id="myTable" cellspacing="0">
                             <thead>
                                 <tr>
-                                    <th style="width: 10%;">
+                                    <th style="width: 15%;">
                                         <p>     
                                             Kategori
                                         </p>
                                             
                                     </th>
-                                    <th style="width: 30%;">
+                                    <th style="width: 25%;">
                                         <p>     
                                             Nama Penghasilan
                                         </p>
@@ -263,12 +263,12 @@
                                             Nominal
                                         </p>
                                     </th>
-                                    <th style="width: 20%;" onclick="sortTable(1)">
+                                    <th style="width: 15%;" onclick="sortTable(1)">
                                         <p>     
                                             Tanggal
                                         </p>
                                     </th>
-                                    <th style="width: 25%;">
+                                    <th style="width: 35%;">
                                         <p>
                                             Aksi
                                         </p>
@@ -284,8 +284,8 @@
                                         <td><p>".$row2['keterangan']."</p></td>
                                         <td><p>RP ".$row2['jumlah']."-</p></td>
                                         <td><p>".$row2['tanggal']."</p></td>
-                                        <td><button id='tombol-aksi-edit' name='bEdit'><a href='edit-transaksi-pengeluaran.php'>Edit</a></button>
-                                        <button id='tombol-aksi-hapus' name='bHapus'>Hapus</button></td>
+                                        <td><a href='edit-transaksi-pengeluaran.php?id=".$row2['id']."'><button id='tombol-aksi-edit' name='bEdit'>Edit</button></a>
+                                        <a href='php/hapus-transaksi.php?id=".$row2['id']."'><button id='tombol-aksi-hapus' name='bHapus'>Hapus</button></td></a>
                                     </tr>";
                                 }
                                 ?>

@@ -1,3 +1,23 @@
+<?php
+
+include 'php/koneksi.php';
+    session_start();
+
+    $sql = "SELECT * FROM pengguna WHERE username = '$_SESSION[username]'" ;
+    $result = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_assoc($result);
+
+    //select catatanutang
+    $sql2 = "SELECT * FROM catatankeuangan cu INNER JOIN subkategori sk ON cu.id_subkategori = sk.id WHERE cu.id = '$_GET[id]'";
+    $result2 = mysqli_query($conn, $sql2);
+    $row2 = mysqli_fetch_assoc($result2);
+
+    //select instansi
+    $sql3 = "SELECT * FROM instansi";
+    $result3 = mysqli_query($conn, $sql3);
+
+?>
+
 <html>
     <head>
         <meta charset="utf-8">
@@ -185,7 +205,7 @@
             
             <div id="content-card">
                 <div id="content-container">
-                    <form action="#" method="POST">
+                    <form action="php/edit-transaksi.php?id=<?php echo $_GET['id'];?>" method="POST">
                         <a href="penjualan.php" style="color:929292; text-decoration: none; margin-top:5%;">Kembali</a>
                         <div class="laporan-container">
                             <div class="laporan-card">
@@ -194,23 +214,23 @@
                                 </div>
                                 <div class="laporan-card-main1">
                                     <label for="input-deskripsi">Deskripsi</label>
-                                    <input type="text" name="input-deskripsi" id="">
+                                    <input type="text" name="deskripsi" id="" value="<?php echo $row2['keterangan']; ?>">
                                 </div>
                                 
                                 <div class="laporan-card-main3">
                                     <label for="input-kategori">Kategori</label>
-                                    <select name="input-kategori" id="">
+                                    <select name="kategori" id="">
                                         <option value="produk offline">Produk Offline</option>
                                         <option value="produk online">Produk Online</option>
                                     </select>
                                 </div>
                                 <div class="laporan-card-main4">
-                                    <label for="input-nominal">Nominal</label>
-                                    <input type="number" name="input-nominal" id="">
+                                    <label for="nominal">Nominal</label>
+                                    <input type="number" name="nominal" id="" value="<?php echo $row2['jumlah'];?>">
                                 </div>
                                 <div class="laporan-card-main5">
                                     <label for="input-tanggal" style="display: block;">Tanggal</label>
-                                    <input type="date" name="input-tanggal" id="">
+                                    <input type="date" name="tanggal" id="" value="<?php echo $row2['tanggal'];?>">
                                 </div>
                                 <div class="laporan-card-button">
                                     <input type="submit" name="" id="" value="Edit">
