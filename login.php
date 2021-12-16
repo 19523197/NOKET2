@@ -50,11 +50,11 @@
                     </div>
                     <div id="form-container-username">
                         
-                        <input type="text" name="username" id="" placeholder="Username">
+                        <input type="text" name="username" id="username" placeholder="Username">
                     </div>
                     <div id="form-container-password">
                         
-                        <input type="password" name="password" id="" placeholder="Password">
+                        <input type="password" name="password" id="password" placeholder="Password">
                     </div>
 
                     <div id="form-container-button">
