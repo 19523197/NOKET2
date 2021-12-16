@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 16, 2021 at 05:53 AM
+-- Generation Time: Dec 16, 2021 at 08:26 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -41,9 +41,11 @@ CREATE TABLE `catatankeuangan` (
 --
 
 INSERT INTO `catatankeuangan` (`id`, `jumlah`, `tanggal`, `keterangan`, `id_pengguna`, `id_subkategori`) VALUES
-(2, 100000, '2020-12-09', 'Sepatu Converse', 1, 2),
-(3, 1250000, '2021-12-08', 'Sepatu Tes', 1, 1),
-(4, 400, '2021-12-08', 'Helmi tes', 1, 6);
+(5, 125061, '2021-12-22', 'Tes edit', 1, 6),
+(6, 125000, '2021-11-09', 'Tes', 1, 6),
+(8, 50021, '2021-11-18', 'Testis', 1, 5),
+(13, 2311231, '2021-12-13', 'TESD', 1, 1),
+(14, 21313123, '2021-12-22', '123123', 1, 2);
 
 -- --------------------------------------------------------
 
@@ -59,6 +61,16 @@ CREATE TABLE `catatanutang` (
   `id_subkategori` int(255) NOT NULL,
   `id_instansi` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `catatanutang`
+--
+
+INSERT INTO `catatanutang` (`id`, `jumlah`, `tanggal`, `id_pengguna`, `id_subkategori`, `id_instansi`) VALUES
+(43, 25000, '2021-12-15', 1, 4, 2),
+(44, 50000, '2021-12-01', 1, 3, 8),
+(45, 50000, '2021-12-09', 1, 4, 3),
+(46, 12500, '2021-11-10', 1, 4, 3);
 
 -- --------------------------------------------------------
 
@@ -150,10 +162,10 @@ CREATE TABLE `subkategori` (
 
 INSERT INTO `subkategori` (`id`, `nama`, `id_kategori`) VALUES
 (1, 'produk offline', 1),
-(2, 'suplai', 2),
+(2, 'suplai alat dan barang', 2),
 (3, 'piutang', 4),
 (4, 'utang', 3),
-(5, 'pembaruan', 2),
+(5, 'pembaruan dan pembangunan', 2),
 (6, 'produk online', 1);
 
 -- --------------------------------------------------------
@@ -233,13 +245,13 @@ ALTER TABLE `targetpencapaian`
 -- AUTO_INCREMENT for table `catatankeuangan`
 --
 ALTER TABLE `catatankeuangan`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `catatanutang`
 --
 ALTER TABLE `catatanutang`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT for table `instansi`
