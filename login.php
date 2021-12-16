@@ -58,12 +58,11 @@
                     </div>
 
                     <div id="form-container-button">
-                        <input type="submit" value="Login"></a>
+                        <p id="hasil"></p>
+                        <input type="submit" value="Login" onclick="validasi()">
                     </div>
 
-                    <div id="form-container-lupa">
-                        <a href="#"><h5>Forgot Password ?</h5></a>
-                    </div>
+                   
                     
                     </form>
                 </div>
@@ -75,8 +74,9 @@
         
 
         <div id="footer">
-            <p><font face="Century Gothic">Copyright @ 2021 Team ALOHA</font></p>
+            <h4>Copyright @ 2021 Team ALOHA</h4>
         </div>
     </div>
     </body>
+    <script src="js/loginValidasi.js"></script>
 </html>
