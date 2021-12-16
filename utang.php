@@ -10,6 +10,16 @@
     $sql2 = "SELECT sk.nama AS kategori, i.nama AS nama , cu.jumlah, cu.tanggal FROM catatanutang cu INNER JOIN subkategori sk ON cu.id_subkategori = sk.id INNER JOIN kategoricatatan kc ON sk.id_kategori = kc.id INNER JOIN instansi i ON cu.id_instansi = i.id WHERE cu.id_pengguna = '$_SESSION[id]' AND sk.id_kategori = 3;" ;
     $result2 = mysqli_query($conn, $sql2);
 
+    //Query total utang
+    $sql3 = "SELECT SUM(ck.jumlah) AS jumlah FROM catatanutang ck INNER JOIN subkategori sk ON ck.id_subkategori = sk.id WHERE sk.id = 3;";
+    $result3 = mysqli_query($conn, $sql3);
+    $row3 = mysqli_fetch_assoc($result3);
+
+    //Query total piutang
+    $sql4 = "SELECT SUM(ck.jumlah) AS jumlah FROM catatanutang ck INNER JOIN subkategori sk ON ck.id_subkategori = sk.id WHERE sk.id = 4;";
+    $result4 = mysqli_query($conn, $sql4);
+    $row4 = mysqli_fetch_assoc($result4);
+
 ?>
 
 <html>
@@ -205,7 +215,7 @@
                             <h3>Utang Saya</h3>
                         </div>
                         <div class="info-header-isi">
-                            <h1 style="color: 0172B7;">Rp 3.900.000.-</h1>
+                            <h1 style="color: 0172B7;">Rp <?php echo $row4['jumlah']; ?>.-</h1>
                         </div>
                         
                     </div>
@@ -214,7 +224,7 @@
                             <h3>Utang Pelanggan</h3>
                         </div>
                         <div class="info-header-isi">
-                            <h1 style="color: FF861A;">Rp 3.900.000.-</h1>
+                            <h1 style="color: FF861A;">Rp <?php echo $row3['jumlah']; ?>.-</h1>
                         </div>
                     </div>
                 </div>
@@ -281,7 +291,7 @@
                                             <td><p>".$row2['tanggal']."</p></td>
                                             <td style='white-space: nowrap; overflow: auto;'>
                                         <button id='tombol-aksi-edit' name='bEdit'><a href='edit-utang.php'>Edit</a> </button>
-                                        <button id='tombol-aksi-hapus' name='bHapus'>Hapus</button>
+                                        <a href='#'><button id='tombol-aksi-hapus' name='bHapus'>Hapus</button></a>
                                         <button id='tombol-aksi-lunas' name='bLunas'>Lunas</button>
                                     </td>
                                         </tr>";
