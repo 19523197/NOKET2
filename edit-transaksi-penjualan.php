@@ -200,8 +200,8 @@
                                 <div class="laporan-card-main3">
                                     <label for="input-kategori">Kategori</label>
                                     <select name="input-kategori" id="">
-                                        <option value="penjualan">Penjualan</option>
-                                        <option value="pengeluaran">Penjualan</option>
+                                        <option value="produk offline">Produk Offline</option>
+                                        <option value="produk online">Produk Online</option>
                                     </select>
                                 </div>
                                 <div class="laporan-card-main4">

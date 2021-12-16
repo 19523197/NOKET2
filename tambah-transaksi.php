@@ -4,10 +4,7 @@
 
     $sql = "SELECT nama FROM subkategori";
     $result = mysqli_query($conn, $sql);
-    
-    
-   
-    
+     
 ?>
 
 <html>
@@ -15,7 +12,7 @@
         <meta charset="utf-8">
 	    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="css/tambah-transaksi.css">
+        <link rel="stylesheet" href="css/edit-transaksi-pengeluaran.css">
         
 
         <!--Import Font dari web-->
@@ -29,7 +26,7 @@
     <body>
     <div id="page">
 
-         <div class = "navbar">
+        <div class = "navbar">
             <div class="navbarLogo">
                 <h1>NOKET<h1>
             </div>
@@ -48,7 +45,7 @@
                 <div class="sidebar-item-profile">
                     <div id="sidebar-image-container">
                         <img src="foto/avatar-icon.png" alt="#" id="sidebar-image-profile">
-                        <h1><?php echo $_SESSION['username']; ?></h1>   
+                        <h1>Admin</h1>   
                     </div>
                 </div>
                 
@@ -193,50 +190,48 @@
                     </div> 
             </div>
 
+
             
             
             <div id="content-card">
                 <div id="content-container">
-                    <form action="php/input-transaksi.php" method="POST">
+                    <form action="#" method="POST">
                         <a href="penjualan.php" style="color:929292; text-decoration: none; margin-top:5%;">Kembali</a>
                         <div class="laporan-container">
                             <div class="laporan-card">
                                 <div class="laporan-card-judul">
-                                    <h1>Tambah Transaksi</h1>
+                                    <h1>Tambah Penjualan</h1>
                                 </div>
                                 <div class="laporan-card-main1">
                                     <label for="input-deskripsi">Deskripsi</label>
-                                    <input type="text" name="keterangan" id="">
+                                    <input type="text" name="input-deskripsi" id="">
                                 </div>
-                                <div class="laporan-card-main2">
-                                    <label for="input-jenis">Jenis</label>
-                                    <select name="kategori" id="">
-                                        <option value="penjualan">Penjualan</option>
-                                        <option value="pengeluaran">Pengeluaran</option>
-                                    </select>
-                                </div>
+                                
                                 <div class="laporan-card-main3">
                                     <label for="input-kategori">Kategori</label>
-                                    <select name="subkategori" id="subkategori">
-                                       
+                                    <select name="input-kategori" id="">
+                                        <option value="produk offline">Produk Offline</option>
+                                        <option value="produk online">Produk Online</option>
                                     </select>
                                 </div>
                                 <div class="laporan-card-main4">
                                     <label for="input-nominal">Nominal</label>
-                                    <input type="number" name="jumlah" id="">
+                                    <input type="number" name="input-nominal" id="">
                                 </div>
                                 <div class="laporan-card-main5">
                                     <label for="input-tanggal" style="display: block;">Tanggal</label>
-                                    <input type="date" name="tanggal" id="">
+                                    <input type="date" name="input-tanggal" id="">
                                 </div>
                                 <div class="laporan-card-button">
-                                    <input type="submit" name="" id="" value="Tambah">
+                                    <input type="submit" name="" id="" value="Edit">
                                 </div>
                                 
                             </div>
                         </div>
                     </form>
                     
+
+                   
                 </div>
             </div>
 
@@ -244,7 +239,7 @@
 
         
 
-      <div id="footer">
+        <div id="footer">
             <h4>Copyright@2021 Team ALOHA </h4>
         </div>
     </div>
