@@ -10,6 +10,27 @@
     $sql2 = "SELECT * FROM akun" ;
     $result2 = mysqli_query($conn, $sql2);
 
+    //select utang
+    $sql3 = "SELECT SUM(jumlah) AS utang FROM `catatanutang` WHERE id_subkategori = '3' and id_pengguna = '$_SESSION[id]'";
+    $result3 = mysqli_query($conn, $sql3);
+    $piutang = mysqli_fetch_assoc($result3);
+
+    //select piutang
+    $sql4 = "SELECT SUM(jumlah) AS utang FROM `catatanutang` WHERE id_subkategori = '4' and id_pengguna = '$_SESSION[id]'";
+    $result4 = mysqli_query($conn, $sql4);
+    $utang = mysqli_fetch_assoc($result4);
+
+    //select penjualan
+    $sql4 = "SELECT SUM(ck.jumlah) AS utang FROM `catatankeuangan` ck INNER JOIN subkategori sk ON ck.id_subkategori = sk.id WHERE sk.id_kategori = '1' and id_pengguna = '$_SESSION[id]' and MONTH(tanggal) = MONTH(CURRENT_DATE())
+    AND YEAR(tanggal) = YEAR(CURRENT_DATE());";
+    $result4 = mysqli_query($conn, $sql4);
+    $penjualan = mysqli_fetch_assoc($result4);
+
+    //select pengeluaran
+    $sql5 = "SELECT SUM(ck.jumlah) AS utang FROM `catatankeuangan` ck INNER JOIN subkategori sk ON ck.id_subkategori = sk.id WHERE sk.id_kategori = '2' and id_pengguna = '$_SESSION[id]' and MONTH(tanggal) = MONTH(CURRENT_DATE())
+    AND YEAR(tanggal) = YEAR(CURRENT_DATE());";
+    $result5 = mysqli_query($conn, $sql5);
+    $pengeluaran = mysqli_fetch_assoc($result5);
 ?>
 
 <html>
@@ -203,13 +224,13 @@
                 
 				<div class = "atas">
 					<div class = "hijau">
-					&nbsp&nbsp&nbsp&nbsp&nbsp Rp.
+					&nbsp&nbsp&nbsp&nbsp&nbsp Rp. <?php echo $penjualan['utang'];  ?>
 					<img src = "foto/chartHijau.png">
 					<p>&nbsp&nbsp&nbsp&nbsp&nbsp Pemasukan Bulan ini</p>
 					</div>
 					
 					<div class = "merah">
-					&nbsp&nbsp&nbsp&nbsp&nbsp Rp. 
+					&nbsp&nbsp&nbsp&nbsp&nbsp Rp. <?php echo $pengeluaran['utang']  ?>
 					<img src = "foto/chartMerah.png">
 					<p>&nbsp&nbsp&nbsp&nbsp&nbsp Pengeluaran Bulan ini</p>
 					</div>
@@ -218,23 +239,23 @@
 				<div class = "InfoAtas">
 					<div class = "hInfo">
 					<p></p>
-					<center> <a href=#>More Info</a></center>
+					<center> <a href="penjualan.php">More Info</a></center>
 					</div>
 					<div class = "mInfo">
 					<p></p>
-					<center> <a href=#>More Info</a></center>
+					<center> <a href="pengeluaran.php">More Info</a></center>
 					</div>
 				</div>
 				
 				<div class = "bawah">
 					<div class = "biru">
-					&nbsp&nbsp&nbsp&nbsp&nbsp Rp. 
+					&nbsp&nbsp&nbsp&nbsp&nbsp Rp. <?php echo $utang['utang'];?>
 					<img src = "foto/chartBiru.png" >
 					<p>&nbsp&nbsp&nbsp&nbsp&nbsp Utang Belum dibayar</p>
 					</div>
 					
 					<div class = "oren">
-					&nbsp&nbsp&nbsp&nbsp&nbsp Rp. 
+					&nbsp&nbsp&nbsp&nbsp&nbsp Rp. <?php echo $piutang['utang'];  ?>
 					<img src = "foto/chartOren.png">
 					<p>&nbsp&nbsp&nbsp&nbsp&nbsp Piutang Belum dibayar</p>
 					</div>
@@ -243,11 +264,11 @@
 				<div class = "InfoBawah">
 					<div class = "bInfo">
 					<p></p>
-					<center> <a href=#>More Info</a></center>
+					<center> <a href="utang.php">More Info</a></center>
 					</div>
 					<div class = "oInfo">
 					<p></p>
-					<center> <a href=#>More Info</a></center>
+					<center> <a href="piutang.php">More Info</a></center>
 					</div>
 				</div>
 				
