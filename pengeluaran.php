@@ -9,11 +9,11 @@
     $sql2 = "SELECT ck.id AS id, sk.nama, ck.keterangan , ck.jumlah, ck.tanggal FROM catatankeuangan ck INNER JOIN subkategori sk ON ck.id_subkategori = sk.id INNER JOIN kategoricatatan kc ON sk.id_kategori = kc.id WHERE ck.id_pengguna = '$_SESSION[id]' AND sk.id_kategori = 2;" ;
     $result2 = mysqli_query($conn, $sql2);
 
-    $sql3 = "SELECT SUM(ck.jumlah) AS jumlah FROM catatankeuangan ck INNER JOIN subkategori sk ON ck.id_subkategori = sk.id WHERE sk.id_kategori = 1;";
+    $sql3 = "SELECT SUM(ck.jumlah) AS jumlah FROM catatankeuangan ck INNER JOIN subkategori sk ON ck.id_subkategori = sk.id WHERE sk.id_kategori = 1 AND ck.id_pengguna = '$_SESSION[id]';";
     $result3 = mysqli_query($conn, $sql3);
     $row3 = mysqli_fetch_assoc($result3);
 
-    $sql4 = "SELECT SUM(ck.jumlah) AS jumlah FROM catatankeuangan ck INNER JOIN subkategori sk ON ck.id_subkategori = sk.id WHERE sk.id_kategori = 2;";
+    $sql4 = "SELECT SUM(ck.jumlah) AS jumlah FROM catatankeuangan ck INNER JOIN subkategori sk ON ck.id_subkategori = sk.id WHERE sk.id_kategori = 2 AND ck.id_pengguna = '$_SESSION[id]';";
     $result4 = mysqli_query($conn, $sql4);
     $row4 = mysqli_fetch_assoc($result4);
 ?>
