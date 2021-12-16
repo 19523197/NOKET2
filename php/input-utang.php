@@ -25,7 +25,9 @@
     }
     else
     {
-        echo "Query succesfully executed!";
+        echo "<script>alert('Selamat, registrasi berhasil!')</script>";
+        header("Location:../utang.php");
+
     } 
    
     
