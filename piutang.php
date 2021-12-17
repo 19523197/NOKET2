@@ -10,11 +10,11 @@
     $sql2 = "SELECT cu.id AS id ,sk.nama AS kategori, i.nama AS nama , cu.jumlah, cu.tanggal FROM catatanutang cu INNER JOIN subkategori sk ON cu.id_subkategori = sk.id INNER JOIN kategoricatatan kc ON sk.id_kategori = kc.id INNER JOIN instansi i ON cu.id_instansi = i.id WHERE cu.id_pengguna = '$_SESSION[id]' AND sk.id_kategori = 4;" ;
     $result2 = mysqli_query($conn, $sql2);
 
-    $sql3 = "SELECT SUM(ck.jumlah) AS jumlah FROM catatankeuangan ck INNER JOIN subkategori sk ON ck.id_subkategori = sk.id WHERE sk.id_kategori = 3 AND ck.id_pengguna = '$_SESSION[id]';";
+    $sql3 = "SELECT SUM(ck.jumlah) AS jumlah FROM catatanutang ck INNER JOIN subkategori sk ON ck.id_subkategori = sk.id WHERE sk.id_kategori = 3 AND ck.id_pengguna = '$_SESSION[id]';";
     $result3 = mysqli_query($conn, $sql3);
     $row3 = mysqli_fetch_assoc($result3);
 
-    $sql4 = "SELECT SUM(ck.jumlah) AS jumlah FROM catatankeuangan ck INNER JOIN subkategori sk ON ck.id_subkategori = sk.id WHERE sk.id_kategori = 4 AND ck.id_pengguna = '$_SESSION[id]';";
+    $sql4 = "SELECT SUM(ck.jumlah) AS jumlah FROM catatanutang ck INNER JOIN subkategori sk ON ck.id_subkategori = sk.id WHERE sk.id_kategori = 4 AND ck.id_pengguna = '$_SESSION[id]';";
     $result4 = mysqli_query($conn, $sql4);
     $row4 = mysqli_fetch_assoc($result4);
 
@@ -213,7 +213,7 @@
                             <h3>Utang Saya</h3>
                         </div>
                         <div class="info-header-isi">
-                            <h1 style="color: 0172B7;">Rp <?php echo $row4['jumlah']; ?>.-</h1>
+                            <h1 style="color: 0172B7;">Rp <?php echo $row3['jumlah']; ?>.-</h1>
                         </div>
                         
                     </div>
@@ -222,7 +222,7 @@
                             <h3>Utang Pelanggan</h3>
                         </div>
                         <div class="info-header-isi">
-                            <h1 style="color: FF861A;">Rp <?php echo $row3['jumlah']; ?>.-</h1>
+                            <h1 style="color: FF861A;">Rp <?php echo $row4['jumlah']; ?>.-</h1>
                         </div>
                     </div>
                 </div>
