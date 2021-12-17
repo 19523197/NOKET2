@@ -223,7 +223,7 @@
                                     <input type="date" name="tanggal" id="">
                                 </div>
                                 <div class="laporan-card-button">
-                                    <input type="submit" name="" id="" value="Edit">
+                                    <input type="submit" name="" id="" value="tambah">
                                 </div>
                                 
                             </div>
