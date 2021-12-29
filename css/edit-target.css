@@ -13,16 +13,8 @@ h1,h2,h3,h4{
     font-family: 'Work-Sans',sans-serif;
 }
 
-h3 a{
-    font-weight: lighter;
-}
-
-h5,h6{
-    font-family: 'Raleway', sans-serif;
-}
-
-p,a{
-    font-family: 'Work Sans', sans-serif;
+#page{
+   
 }
 
 #isi-page{
@@ -159,10 +151,20 @@ p,a{
     
 }
 
+.sidebar-item-text{
+
+}
 
 /**************************************************************SideBar*****************************/
 
 /*****************Collapse SideBar**************/
+    .collapsible {
+        
+    }
+
+    .active, .collapsible:hover {
+    
+    }
 
     .collapse-item {
     height: auto;
@@ -215,176 +217,140 @@ p,a{
 #content-card{
     width: 80%;
     height: auto;
-    background-color: #FEF1E6;
-	font-family: Raleway;
+    background-color: FEF1E6;
+    
+    
 }
 
-.atas{
-	width: 80%;
-	margin: auto;
-	display: flex;
-	margin-top: 2%;
-	color: #fff;
-	
-}
-
-.hijau{
-	width: 35%;
-	padding-top: 3%;
-	height: auto;
-	background-color: #00A85A;
-}
-
-.hijau img{
-	float: right;
-}
-
-.merah{
-	width: 35%;
-	padding-top: 3%;
-	height: auto;
-	background-color: #fa7b6b;
-	margin-left: auto;
-}
-
-.merah img{
-	float: right;
-	margin-right: 2%;
-	margin-top: 1%;
-}
-
-.InfoAtas{
-	width: 80%;
-	margin: auto;
-	display: flex;
-	color: #fff;
-	
-}
-
-.InfoAtas a{
-	text-decoration: none;
-	color: #fff;
-}
-
-.hInfo{
-	width: 35%;
-	height: auto;
-	background-color: #05934F;
-	padding-bottom: 2%;
-}
-
-.mInfo{
-	width: 35%;
-	height: auto;
-	background-color: #ad5145;
-	margin-left: auto;
-	padding-bottom: 2%;
-}
-
-/**********************Batas Atas dan Bawah********************/
-
-.bawah{
-	width: 80%;
-	margin: auto;
-	display: flex;
-	margin-top: 2%;
-	color: #fff;
-}
-
-.biru{
-	width: 35%;
-	padding-top: 3%;
-	height: auto;
-	background-color: #0172B7;
-}
-
-.biru img{
-	float: right;
-}
-
-.oren{
-	width: 35%;
-	padding-top: 3%;
-	height: auto;
-	background-color: #FF861A;
-	margin-left: auto;
-}
-
-.oren img{
-	float: right;
-	margin-right: 2%;
-	margin-top: 1%;
-}
-
-.InfoBawah{
-	width: 80%;
-	margin: auto;
-	display: flex;
-	color: #fff;
-	
-}
-
-.InfoBawah a{
-	text-decoration: none;
-	color: #fff;
-}
-
-.bInfo{
-	width: 35%;
-	height: auto;
-	background-color: #0165A4;
-	padding-bottom: 2%;
-}
-
-.oInfo{
-	width: 35%;
-	height: auto;
-	background-color: #E37416;
-	margin-left: auto;
-	padding-bottom: 2%;
-}
-
-.Transaksi h4{
-    margin-left: 10%;
-    font-weight: lighter ;
-}
-
-/**********************Transaksi Terbaru********************/
-
-.pemasukan{
-    background-color: #FFF;
-    width: 80%;
+#content-container
+{
+    width: 60%;
+    height: auto;
     margin: auto;
-    height: auto; 
+    margin-top: 3%;
 }
-.pemasukan h3{
-    color: #929292;
-}
-.pemasukan h6{
-    color: #929292;
-}
-.pengeluaran{
-    background-color: #FFF;
-    width: 80%;
-    margin: auto;
+
+.laporan-container
+{
+    width: 100%;
     height: auto;
 }
-.pengeluaran h3{
-    color: #929292;
+
+.laporan-card
+{
+    width: 100%;
+    height: auto;
+    display: grid;
+    margin-bottom: 3%;
+    grid-template-areas: 
+        'header header'
+        'main1 main1'
+        'main2 main4'
+        'main5 kosong' 
+        'footer footer'       ;
+    row-gap: 3%;
+    border: 1px solid #BEBEBE;
+    background-color: white;
+    padding: 3%;
 }
-.pengeluaran h6{
-    color: #929292;
+
+.laporan-card-judul
+{
+    grid-area: header;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom:5% ;
+}
+
+.laporan-card-main1
+{
+    grid-area: main1;
+    text-align: left;
+    margin: auto;
+    width: 100%;
+    margin-bottom: 1% ;
+}
+
+.laporan-card-main1 input, .laporan-card-main2 input,
+.laporan-card-main3 select, .laporan-card-main4 input[type="number"]
+, .laporan-card-main4 input[type="date"] , .laporan-card-main5 input[type="number"]
+{
+    width: 100%;
+    height: auto;
+    padding: 2%;
+}
+
+.laporan-card-main2
+{
+    grid-area: main2;
+    text-align: left;
+    width: 90%;
+   
+}
+
+.laporan-card-main4
+{
+    grid-area: main4;
+    text-align: left;
+    width: 90%;
+     
+}
+
+.laporan-card-main5
+{
+    grid-area: main5;
+    text-align: left;
+    margin: auto;
+    width: 100%;
+    
+}
+
+.laporan-card-button
+{
+    grid-area: footer;
+    text-align: left;
+    margin: auto;
+    width: 25%;
+    height: 20%;
+    margin-top: 5%;
+    margin-bottom: 10%;
+}
+
+.laporan-card-button input[type="submit"]
+{
+    
+    width: 100%;
+    height: auto;
+    background-color: DADADA;
+}
+
+
+
+.laporan-card-tanggal
+{
+    grid-area: footer;
+    color: 929292;
+}
+
+.jumlah-penjualan
+{
+    color: 00A85A;
+}
+
+.jumlah-pengeluaran
+{
+    color: C74333;
 }
 
 #footer{
-	  width: 100%;
+      width: 100%;
       height: auto;
       background: #333;
       color: #fff;
       position: absolute;
       margin: auto;
       text-align: center;
-	  font-family: Work-Sans;
+      font-family: Work-Sans;
      }
 #footer h4{
     font-weight: lighter;

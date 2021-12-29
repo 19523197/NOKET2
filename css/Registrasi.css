@@ -23,10 +23,6 @@ p{
 font-family: 'Work Sans', sans-serif;
 }
 
-#page{
- 
-}
-
 #isi-page{
   width: 100%;
   height: auto;
@@ -68,7 +64,7 @@ display:block;
 width:200px;
 float:right;
 margin-left:10px;
-font-weight: bolder;
+font-weight: lighter;
 }
 
 .navbarMenu a {
@@ -77,6 +73,7 @@ padding:1%;
 text-decoration:none;
 background-color:#fff;
 color:black;
+font-weight: lighter;
 }
 
 .navbarMenu a:hover {
@@ -166,20 +163,10 @@ color: black;
   
 }
 
-.sidebar-item-text{
-
-}
 
 /**************************************************************SideBar*****************************/
 
 /*****************Collapse SideBar**************/
-  .collapsible {
-      
-  }
-
-  .active, .collapsible:hover {
-  
-  }
 
   .collapse-item {
   height: auto;
@@ -349,6 +336,11 @@ font-family: 'Raleway', sans-serif;
 color: white;
 }
 
+
+#form-container-button:hover > input{
+  background-color: #FFB085;
+  }
+
 #form-container-lupa{
 width: 50%;
 margin: auto;
@@ -360,15 +352,13 @@ text-align: center;
 }
 
 #footer{
-      width: 100%;
-      height: auto;
-      background: #333;
-      color: #fff;
-      position: absolute;
-      margin: auto;
-      text-align: center;
-      font-family: Work-Sans;
-     }
-#footer h4{
-    font-weight: lighter;
-}
+  width: 100%;
+  height: 10%;
+  line-height: 50px;
+  background: #333;
+  color: #fff;
+  position: absolute;
+  margin: auto;
+  padding-top:2%;
+  text-align: center;
+  }

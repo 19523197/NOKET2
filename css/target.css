@@ -236,56 +236,7 @@ p,a{
     margin-left: 4%;
     width: 100%;
     font-size: 36px;
-}
-
-#table{
-    width: 95%;
-    max-height: 80%;
-    margin: auto;
-    border: solid;
-    text-align: center;
     
-    margin-top: 2%;
-}
-
-th{
-    background-color: FFB085;
-    padding: 1%;
-    color:  white;
-}
-
-td{
-    background-color: white;
-    border-bottom: 1px solid black;
-    margin: 0px;
-    padding: 1em;
-    padding-top: 2%;
-    padding-bottom: 2%;
-    
-}
-
-.table-target{
-    max-width: 10%;
-    overflow: hidden;
-    text-align: center;
-}
-
-.aksi-col{
-    width: auto;
-    display: flex;
-    flex-wrap: wrap;
-    height: 100%;
-    text-align: center;
-}
-
-.isi-aksi{
-    width: 70%;
-    height: auto;
-    
-}
-
-.aksi-col a{
-    text-decoration: none;
 }
 
 #button-tambah{
@@ -315,16 +266,422 @@ td{
     border-radius: 5%;
 }
 
+.laporan-container
+{
+    width: 100%;
+    height: auto;
+    display: flex;
+}
+
+.laporan-card
+{
+    width: 100%;
+    height: auto;
+    display: grid;
+    margin-bottom: 3%;
+    grid-template-areas: 
+        'main main main right'
+        'footer footer footer right'
+    ;
+    grid-gap: 1%;
+    border: 1px solid #BEBEBE;
+    background-color: white;
+    padding: 1%;
+}
+
+.laporan-card-kategori
+{
+    grid-area: main;
+    font-weight: bold;
+}
+
+.laporan-card-jumlah
+{
+    grid-area: right;
+    text-align: center;
+    margin: auto;
+}
+
 /*************************\Content\***************************/
 
 #footer{
     width: 100%;
-      height: 10%;
-      
-      line-height: 50px;
-      background: #333;
-      color: #fff;
-      position: absolute;
-      
-      margin: auto;
-      }
+    height: auto;
+    background: #333;
+    color: #fff;
+    position: absolute;
+    margin: auto;
+    text-align: center;
+    font-family: Work-Sans;
+   }
+#footer h4{
+  font-weight: lighter;
+}
+
+/*ngeload font
+font-family: 'Noto Sans', sans-serif;
+font-family: 'Raleway', sans-serif;
+font-family: 'Work Sans', sans-serif;
+*/
+
+body,head{
+    margin: 0;
+    padding: 0;
+}
+
+h1,h2,h3,h4{
+    font-family: 'Work-Sans',sans-serif;
+}
+
+h3 a{
+    font-weight: lighter;
+}
+
+h5,h6{
+    font-family: 'Raleway', sans-serif;
+}
+
+p,a{
+    font-family: 'Work Sans', sans-serif;
+}
+
+#page{
+   
+}
+
+#isi-page{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+/**********************************Navbar***********************************/
+
+.navbar{
+    width: 100%;
+ }
+ .navbarLogo{
+   color: black;
+   float: left;
+   text-align: left;
+   margin-top: 1%;
+   margin-left: 30px;
+ }
+ 
+ ol,ul {
+   list-style: none;
+ }
+ 
+ .navbarMenu {
+   font-family: "Work Sans";
+   float: right;
+   background-color: #FFF;
+   text-align: center;
+   justify-content: center;
+   display: flex;
+   position: relative;
+ }
+ 
+ .navbarMenu li {
+   display:block;
+   width:200px;
+   float:right;
+   margin-left:10px;
+   font-weight: bolder;
+ }
+ 
+ .navbarMenu a {
+   display:block;
+   padding:1%;
+   text-decoration:none;
+   background-color:#fff;
+   color:black;
+ }
+ 
+ .navbarMenu a:hover {
+   background-color: #F9D5A7;
+   color: black;
+ }
+
+/**********************************Navbar*********************************/
+
+/*************************************SideBar*****************************/
+
+#sidebar{
+    width: 20%;
+    min-height: 87.5vh;
+    background-color: F9D5A7;
+}
+
+.sidebar-item-profile{
+    width: 90%;
+    height: auto;
+    display: flex;
+    margin: auto;
+    text-align: center;
+    padding: 1%;
+    margin-bottom: 1%;
+    border-bottom: px solid black;
+}
+
+.sidebar-item-container{
+    width: 100%;
+    height: auto;
+    display: block;
+    text-decoration: none;
+    color: black;
+    border: none;
+}
+
+.sidebar-item-container:hover{
+    background-color: #555;
+    color: white;
+}
+
+.sidebar-item{
+    width: 70%;
+    height: auto;
+    display: flex;
+    margin: auto;
+    text-align: center;
+    padding: 1%;
+    
+}
+
+#sidebar-item-icon{
+    width: 2vw;
+    height: 4vh;
+    display: flex;
+    margin-right: 5%;
+    margin-top: 4%;
+}
+
+#sidebar-image-profile{
+    width: 10vh;
+    height: 5vw;
+    margin-right: 15%;
+    border: solid 2px black;
+    border-radius: 10%;
+    background-color: white;
+}
+
+#sidebar-image{
+    width: 100%;
+    height: 100%;
+    margin-top: 10%;
+    
+    
+}
+
+#sidebar-image-container{
+    width: 30%;
+    height: 20%;
+    display: flex;
+    margin: auto;
+    margin-right: 65%;
+    
+}
+
+.sidebar-item-text{
+
+}
+
+/**************************************************************SideBar*****************************/
+
+/*****************Collapse SideBar**************/
+    .collapsible {
+        
+    }
+
+    .active, .collapsible:hover {
+    
+    }
+
+    .collapse-item {
+    height: auto;
+    display: none;
+    
+    color: black;
+    }
+
+    /***#555**/
+
+    .collapse-item-container:hover {
+        background-color: #555;
+        color: white;
+        }
+
+    .collapse-item-2 {
+        width: 50%;
+        height: auto;
+        display: flex;
+        margin: auto;
+        text-align: center;
+        padding: none;
+        }
+    
+    .collapse-item-container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    text-decoration: none;
+    color: black;
+    border: none;
+    }
+
+    #collapse-item-icon{
+    width: 2vw;
+    height: 4vh;
+    display: flex;
+    margin-right: 5%;
+    margin-top: 10%;
+    }
+
+    .selected{
+        background-color: #90AACB;
+        color: white;
+    }
+
+
+/**********************Collapse Sidebar********************/
+
+#content-card{
+    width: 80%;
+    height: auto;
+    background-color: FEF1E6;
+    
+    
+}
+
+#content-container
+{
+    width: 60%;
+    height: auto;
+    margin: auto;
+    margin-top: 3%;
+}
+
+.laporan-container
+{
+    width: 100%;
+    height: auto;
+}
+
+.laporan-card
+{
+    width: 100%;
+    height: auto;
+    display: grid;
+    margin-bottom: 3%;
+    grid-template-areas: 
+        'header header'
+        'main1 main1'
+        'main2 main3'
+        'main4 main5' 
+        'footer footer'       ;
+    row-gap: 3%;
+    border: 1px solid #BEBEBE;
+    background-color: white;
+    padding: 3%;
+}
+
+.laporan-card-judul
+{
+    grid-area: header;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom:5% ;
+}
+
+.laporan-card-main1
+{
+    grid-area: main1;
+    text-align: left;
+    margin: auto;
+    width: 100%;
+    margin-bottom: 1% ;
+}
+
+.laporan-card-main1 input[type="text"], .laporan-card-main2 select,
+.laporan-card-main3 select, .laporan-card-main4 input[type="number"]
+, .laporan-card-main4 input[type="date"]
+{
+    width: 100%;
+    height: auto;
+    padding: 2%;
+}
+
+.laporan-card-main2
+{
+    grid-area: main2;
+    text-align: left;
+    
+    width: 75%;
+   
+     
+}
+
+.laporan-card-main3
+{
+    grid-area: main3;
+    text-align: left;
+    margin: auto;
+    width: 100%;
+    
+}
+
+.laporan-card-main4
+{
+    grid-area: main4;
+    text-align: left;
+    width: 75%;
+     
+}
+
+.laporan-card-main5
+{
+    grid-area: main5;
+    text-align: left;
+    margin: auto;
+    width: 100%;
+    
+}
+
+.laporan-card-button
+{
+    grid-area: footer;
+    text-align: left;
+    margin: auto;
+    width: 25%;
+    height: 20%;
+    margin-top: 5%;
+    margin-bottom: 10%;
+}
+
+.laporan-card-button input[type="submit"]
+{
+    
+    width: 100%;
+    height: auto;
+    background-color: DADADA;
+}
+
+
+
+.laporan-card-tanggal
+{
+    grid-area: footer;
+    color: 929292;
+}
+
+.jumlah-penjualan
+{
+    color: 00A85A;
+}
+
+.jumlah-pengeluaran
+{
+    color: C74333;
+}
+

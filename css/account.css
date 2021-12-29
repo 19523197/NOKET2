@@ -25,6 +25,10 @@ p,a{
     font-family: 'Work Sans', sans-serif;
 }
 
+#page{
+   
+}
+
 #isi-page{
     width: 100%;
     height: auto;
@@ -159,10 +163,20 @@ p,a{
     
 }
 
+.sidebar-item-text{
+
+}
 
 /**************************************************************SideBar*****************************/
 
 /*****************Collapse SideBar**************/
+    .collapsible {
+        
+    }
+
+    .active, .collapsible:hover {
+    
+    }
 
     .collapse-item {
     height: auto;
@@ -186,7 +200,7 @@ p,a{
         text-align: center;
         padding: none;
         }
-
+    
     .collapse-item-container{
     width: 100%;
     height: auto;
@@ -215,176 +229,47 @@ p,a{
 #content-card{
     width: 80%;
     height: auto;
-    background-color: #FEF1E6;
-	font-family: Raleway;
+    background-color: FEF1E6;
+    padding-top: 5%;
+    padding-left: 2%;
 }
 
-.atas{
-	width: 80%;
-	margin: auto;
-	display: flex;
-	margin-top: 2%;
-	color: #fff;
-	
+#content-card img{
+    height: 50px;
 }
 
-.hijau{
-	width: 35%;
-	padding-top: 3%;
-	height: auto;
-	background-color: #00A85A;
+#content-card table{
+    border-spacing: 30px;
 }
 
-.hijau img{
-	float: right;
+#content-card td{
+    font-size: 12px;
 }
 
-.merah{
-	width: 35%;
-	padding-top: 3%;
-	height: auto;
-	background-color: #fa7b6b;
-	margin-left: auto;
+#content-card h3{
+    text-align: center;
+    font-size: 28px;
+    font-weight: lighter;
 }
 
-.merah img{
-	float: right;
-	margin-right: 2%;
-	margin-top: 1%;
-}
-
-.InfoAtas{
-	width: 80%;
-	margin: auto;
-	display: flex;
-	color: #fff;
-	
-}
-
-.InfoAtas a{
-	text-decoration: none;
-	color: #fff;
-}
-
-.hInfo{
-	width: 35%;
-	height: auto;
-	background-color: #05934F;
-	padding-bottom: 2%;
-}
-
-.mInfo{
-	width: 35%;
-	height: auto;
-	background-color: #ad5145;
-	margin-left: auto;
-	padding-bottom: 2%;
-}
-
-/**********************Batas Atas dan Bawah********************/
-
-.bawah{
-	width: 80%;
-	margin: auto;
-	display: flex;
-	margin-top: 2%;
-	color: #fff;
-}
-
-.biru{
-	width: 35%;
-	padding-top: 3%;
-	height: auto;
-	background-color: #0172B7;
-}
-
-.biru img{
-	float: right;
-}
-
-.oren{
-	width: 35%;
-	padding-top: 3%;
-	height: auto;
-	background-color: #FF861A;
-	margin-left: auto;
-}
-
-.oren img{
-	float: right;
-	margin-right: 2%;
-	margin-top: 1%;
-}
-
-.InfoBawah{
-	width: 80%;
-	margin: auto;
-	display: flex;
-	color: #fff;
-	
-}
-
-.InfoBawah a{
-	text-decoration: none;
-	color: #fff;
-}
-
-.bInfo{
-	width: 35%;
-	height: auto;
-	background-color: #0165A4;
-	padding-bottom: 2%;
-}
-
-.oInfo{
-	width: 35%;
-	height: auto;
-	background-color: #E37416;
-	margin-left: auto;
-	padding-bottom: 2%;
-}
-
-.Transaksi h4{
-    margin-left: 10%;
-    font-weight: lighter ;
-}
-
-/**********************Transaksi Terbaru********************/
-
-.pemasukan{
-    background-color: #FFF;
-    width: 80%;
-    margin: auto;
-    height: auto; 
-}
-.pemasukan h3{
-    color: #929292;
-}
-.pemasukan h6{
-    color: #929292;
-}
-.pengeluaran{
-    background-color: #FFF;
-    width: 80%;
-    margin: auto;
+#content-container
+{
+    width: 60%;
     height: auto;
+    margin: auto;
+    margin-top: 3%;
 }
-.pengeluaran h3{
-    color: #929292;
-}
-.pengeluaran h6{
-    color: #929292;
-}
+
 
 #footer{
-	  width: 100%;
+      width: 100%;
       height: auto;
       background: #333;
       color: #fff;
       position: absolute;
       margin: auto;
       text-align: center;
-	  font-family: Work-Sans;
+      font-family: Work-Sans;
      }
 #footer h4{
     font-weight: lighter;
