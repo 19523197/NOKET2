@@ -36,7 +36,7 @@
                 <div class="sidebar-item-profile">
                     <div id="sidebar-image-container">
                         <img src="foto/avatar-icon.png" alt="#" id="sidebar-image-profile">
-                        <h1>Admin</h1>   
+                        <h1><?php echo $row['username'];?></h1>   
                     </div>
                 </div>
                 

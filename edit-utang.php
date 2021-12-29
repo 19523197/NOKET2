@@ -106,16 +106,7 @@ include 'php/koneksi.php';
                             </div>
                         </a>
 
-                        <a href="laporan-transaksi.php" class="collapse-item-container">
-                            <div class="collapse-item-2">
-                                <div id="collapse-item-icon">
-                                    <img src= "foto/laporan.png" alt="" id="sidebar-image">
-                                </div>
-                                <div class="sidebar-item-text">
-                                    <h4>Laporan</h4>
-                                </div>
-                            </div>
-                        </a>
+                    
                     </div>
 
                 <a href="#" class="sidebar-item-container collapsible selected">
@@ -152,16 +143,7 @@ include 'php/koneksi.php';
                             </div>
                         </a>
 
-                        <a href="utang.php" class="collapse-item-container" >
-                            <div class="collapse-item-2">
-                                <div id="collapse-item-icon">
-                                    <img src="foto/laporan.png" alt="" id="sidebar-image">
-                                </div>
-                                <div class="sidebar-item-text">
-                                    <h4>Laporan</h4>
-                                </div>
-                            </div>
-                        </a>
+                        
                     </div>
 
                 <a href="#" class="sidebar-item-container">

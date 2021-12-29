@@ -123,16 +123,6 @@
                             </div>
                         </a>
 
-                        <a href="laporan-transaksi.php" class="collapse-item-container">
-                            <div class="collapse-item-2">
-                                <div id="collapse-item-icon">
-                                    <img src= "foto/laporan.png" alt="" id="sidebar-image">
-                                </div>
-                                <div class="sidebar-item-text">
-                                    <h4>Laporan</h4>
-                                </div>
-                            </div>
-                        </a>
                     </div>
 
                 <a href="#" class="sidebar-item-container collapsible">
@@ -169,16 +159,6 @@
                             </div>
                         </a>
 
-                        <a href="utang.php" class="collapse-item-container" >
-                            <div class="collapse-item-2">
-                                <div id="collapse-item-icon">
-                                    <img src="foto/laporan.png" alt="" id="sidebar-image">
-                                </div>
-                                <div class="sidebar-item-text">
-                                    <h4>Laporan</h4>
-                                </div>
-                            </div>
-                        </a>
                     </div>
 
                 <a href="#" class="sidebar-item-container">
@@ -203,7 +183,7 @@
                 </a>
 
                     <div class="collapse-item">
-                        <a href="#" class="collapse-item-container" >
+                        <a href="account.php" class="collapse-item-container" >
                             <div class="collapse-item-2">
                                 <div id="collapse-item-icon">
                                     <img src="foto/icons8-admin-settings-male-90.png" alt="" id="sidebar-image">
@@ -272,19 +252,6 @@
 					</div>
 				</div>
 				
-                <div class="Transaksi">
-                    <h4>Transaksi Terbaru</h4>
-                    <div class = "pemasukan">
-                        <h3>Pemasukan</h3>
-                        <h4 style="float: right; color: #00A85A;">+ Rp. 1200000</h4>
-                        <h6>28 Nov 2021 - 09.31</h6>
-                    </div>
-                    
-                    <div class="pengeluaran">
-                        <h3>Pengeluaran</h3>
-                        <h4 style="float: right; color: #C74333 ;">- Rp. 200000</h4>
-                        <h6>28 Nov 2021 - 09.31</h6>
-                    </div>
                 </div>
 
 				

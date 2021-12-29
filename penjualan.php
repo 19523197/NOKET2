@@ -106,16 +106,6 @@
                             </div>
                         </a>
 
-                        <a href="laporan-transaksi.php" class="collapse-item-container">
-                            <div class="collapse-item-2">
-                                <div id="collapse-item-icon">
-                                    <img src= "foto/laporan.png" alt="" id="sidebar-image">
-                                </div>
-                                <div class="sidebar-item-text">
-                                    <h4>Laporan</h4>
-                                </div>
-                            </div>
-                        </a>
                     </div>
 
                 <a href="#" class="sidebar-item-container collapsible">
@@ -152,16 +142,6 @@
                             </div>
                         </a>
 
-                        <a href="utang.php" class="collapse-item-container" >
-                            <div class="collapse-item-2">
-                                <div id="collapse-item-icon">
-                                    <img src="foto/laporan.png" alt="" id="sidebar-image">
-                                </div>
-                                <div class="sidebar-item-text">
-                                    <h4>Laporan</h4>
-                                </div>
-                            </div>
-                        </a>
                     </div>
 
                 <a href="#" class="sidebar-item-container">
@@ -174,7 +154,7 @@
                         </div>
                     </div>
             </a>
-                <a href="#" class="sidebar-item-container collapsible">
+                <a href="account.php" class="sidebar-item-container collapsible">
                     <div class="sidebar-item">
                         <div id="sidebar-item-icon">
                             <img src="foto/icons8-account-100.png" alt="" id="sidebar-image">

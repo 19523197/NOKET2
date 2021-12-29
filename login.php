@@ -1,9 +1,10 @@
 <html>
     <head>
+        <title>Log In NOKET</title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="css/login.css">
+        <link rel="stylesheet" href="css/login.css?v=<?php echo time(); ?>">
         
 
         <!--Import Font dari web-->
@@ -25,7 +26,7 @@
                         <ul class="navbarMenu">
                             <li><h3><a href="index.php">Landing Page</a></h3></li>
                             <li><h3><a href="#" id="selected">Log In</a></h3></li>
-                            <li><h3><a href="registrasi.php">Sign Up</a></h3></li>
+                            <li><h3><a href="Registrasi.php">Sign Up</a></h3></li>
                         </ul>
                 </nav>
         </div>
@@ -74,7 +75,7 @@
         
 
         <div id="footer">
-            <h4>Copyright @ 2021 Team ALOHA</h4>
+            <p>Copyright @ 2021 Team ALOHA</p>
         </div>
     </div>
     </body>

@@ -1,23 +1,20 @@
 <?php
-    include 'php/koneksi.php';
+
+include 'php/koneksi.php';
     session_start();
 
-    $sql = "SELECT nama FROM subkategori";
-    $result = mysqli_query($conn, $sql);
-    
     $sql = "SELECT * FROM pengguna WHERE username = '$_SESSION[username]'" ;
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_assoc($result);
-   
-    
+
 ?>
 
 <html>
     <head>
         <meta charset="utf-8">
-	    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="css/edit-transaksi-pengeluaran.css">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/account.css?v=<?php echo time(); ?>">
         
 
         <!--Import Font dari web-->
@@ -50,9 +47,7 @@
                 <div class="sidebar-item-profile">
                     <div id="sidebar-image-container">
                         <img src="foto/avatar-icon.png" alt="#" id="sidebar-image-profile">
-                        <h1><?php
-                        echo $row['username'];
-                        ?></h1>   
+                        <h1><?php echo $row['username'];?></h1>   
                     </div>
                 </div>
                 
@@ -68,7 +63,7 @@
                     </div>
                 </a>
 
-                <a href="#" class="sidebar-item-container collapsible  selected">
+                <a href="#" class="sidebar-item-container collapsible ">
                     <div class="sidebar-item">
                         <div id="sidebar-item-icon">
                             <img src="foto/icons8-money-96.png" alt="" id="sidebar-image">
@@ -101,7 +96,6 @@
                                 </div>
                             </div>
                         </a>
-
                     </div>
 
                 <a href="#" class="sidebar-item-container collapsible">
@@ -137,7 +131,6 @@
                                 </div>
                             </div>
                         </a>
-
                     </div>
 
                 <a href="#" class="sidebar-item-container">
@@ -150,7 +143,7 @@
                         </div>
                     </div>
             </a>
-                <a href="#" class="sidebar-item-container collapsible">
+                <a href="#" class="sidebar-item-container collapsible selected">
                     <div class="sidebar-item">
                         <div id="sidebar-item-icon">
                             <img src="foto/icons8-account-100.png" alt="" id="sidebar-image">
@@ -177,49 +170,40 @@
                     </div> 
             </div>
 
-
             
             
             <div id="content-card">
-                <div id="content-container">
-                    <form action="php/input-transaksi.php" method="POST">
-                        <a href="pengeluaran.php" style="color:929292; text-decoration: none; margin-top:5%;">Kembali</a>
-                        <div class="laporan-container">
-                            <div class="laporan-card">
-                                <div class="laporan-card-judul">
-                                    <h1>Tambah Pengeluaran</h1>
-                                </div>
-                                <div class="laporan-card-main1">
-                                    <label for="input-deskripsi">Deskripsi</label>
-                                    <input type="text" name="deskripsi" id="">
-                                </div>
-                                
-                                <div class="laporan-card-main3">
-                                    <label for="input-kategori">Kategori</label>
-                                    <select name="kategori" id="">
-                                        <option value="suplai alat dan barang">Suplai Alat dan Barang</option>
-                                        <option value="pembaruan dan pembangunan">Pembaruan dan Pembangunan</option>
-                                    </select>
-                                </div>
-                                <div class="laporan-card-main4">
-                                    <label for="input-nominal">Nominal</label>
-                                    <input type="number" name="nominal" id="">
-                                </div>
-                                <div class="laporan-card-main5">
-                                    <label for="input-tanggal" style="display: block;">Tanggal</label>
-                                    <input type="date" name="tanggal" id="">
-                                </div>
-                                <div class="laporan-card-button">
-                                    <input type="submit" name="" id="" value="tambah">
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </form>
-                    
+                <h3> Data Profil Pengguna </h3>
+                <table>
+                <tr>
+                <td> <img src="foto/username.png"></td>
+                <td> <label>Username</label> </td>
+                <td>:</td>
+                <td> <h1><?php echo $row['username'];?></h1> </td>
+                </tr>
 
-                   
-                </div>
+                <tr>
+                <td> <img src="foto/email.png"></td>
+                <td> <label>Email</label> </td>
+                <td>:</td>
+                <td> <h1><?php echo $row['email'];?></h1> </td>
+                </tr>
+
+                <tr>
+                <td> <img src="foto/password.png"></td>
+                <td> <label>Password</label> </td>
+                <td>:</td>
+                <td> <h1><?php echo $row['password'];?></h1> </td>
+                </tr>
+
+                <tr>
+                <td> <img src="foto/nohp.png"></td>
+                <td> <label>Nomor HP</label> </td>
+                <td>:</td>
+                <td> <h1>+62<?php echo $row['nohp'];?></h1> </td>
+                </tr>
+
+                </table>    
             </div>
 
         </div>

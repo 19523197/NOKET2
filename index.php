@@ -7,7 +7,7 @@
         <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
 
         <!-- ===== CSS ===== -->
-        <link rel="stylesheet" href="assets/css/styles.css">
+        <link rel="stylesheet" href="assets/css/styles.css?v=<?php echo time();?>">
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,6 +37,7 @@
                         <li class="nav__item"><a href="login.php" class="nav__link">Log in</a></li>
                         <li class="nav__item"><a href="Registrasi.php" class="nav__link">Sign Up</a></li>
                     </ul>
+
                 </div>
             </nav>
         </header>
@@ -51,9 +52,10 @@
 
                     <div class="home__data">
                         <h1 class="home__title">NOKET<br></h1>
-                        <h2 class="home__abb">Notes Market</h2>
+                        <h2 class="home__abb">Notes &nbspMarket</h2>
                         <p></p>
-                        <p class="home__description">" Lupakan Kertas Beralih ke Digital "</p>
+                        <br>
+                        <p class="home__description">Lupakan Kertas Beralih ke Digital</p>
                         <a href="login.php" class="home__button">Get Started</a>
                     </div>
                 </div>
@@ -64,22 +66,21 @@
             <!--===== FEATURES =====-->
             <section class="feature" id="feature">
             <div class="feature__container bd-grid">
-
             
                 <div class ="feature__data">
                     <h2 class="feature__title">Catat Keuangan UKM lebih Efektif dengan Fitur</h2>
                 <div class ="feature__img">
                 <img src="assets/img/1.png" alt="" data-speed="1" class="move">
                 <br>
-                    <i>Pencatatan Penjualan Pengeluaran Keuangan UKM secara digital yang mudah dan aman</i>
+                    <p>Pencatatan Penjualan Pengeluaran Keuangan UKM secara digital yang mudah dan aman</p>
                     <br>
                 <img src="assets/img/2.png" alt="" data-speed="1" class="move">
                 <br>
-                    <i>Pencatatan Utang Piutang yang dimiliki UKM dan Dapat mengetahuinya Lebih Detail</i>
+                    <p>Pencatatan Utang Piutang yang dimiliki UKM dan Dapat mengetahuinya Lebih Detail</p>
                     <br><br>
                 <img src="assets/img/3.png" alt="" data-speed="1" class="move"> 
                 <br>
-                    <i>Tentukan dan Realisasikan target yang ingin dicapai UKM</i>
+                    <p>Tentukan dan Realisasikan target yang ingin dicapai UKM</p>
                     <br>
                 <div> 
             </div>
@@ -105,28 +106,29 @@
                 <td><img src ="assets/img/r.jpeg"></td>
                 
                 <tr>
-                <td>MUHAMMAD FACHRI RAMADHAN</td>
-                <td>HELMY FACHREZA HIMAWAN</td>
-                <td>MUHAMMAD FADHIL ATHALLAH</td>
-                <td>RAIHAN RIFALDI</td>
+                <td><h4>MUHAMMAD FACHRI RAMADHAN</h4></td>
+                <td><h4>HELMY FACHREZA HIMAWAN</h4></td>
+                <td><h4>MUHAMMAD FADHIL ATHALLAH</h4></td>
+                <td><h4>RAIHAN RIFALDI</h4></td>
                 </tr>
 
                 <tr>
-                <td>19523197</td>
-                <td>20523195</td>
-                <td>20523201</td>
-                <td>20523030</td>
+                <td><p>19523197</p></td>
+                <td><p>20523195</p></td>
+                <td><p>20523201</p></td>
+                <td><p>20523030</p></td>
                 </tr>
                 </table>
                 </div>
                 <div> 
+                    <br>
             </div>
             </section>
         </main>
 
          <footer id="footer">
             <!--===== Footer =====-->
-            <h3>Copyright@2021 Team ALOHA</h3>
+            <p>Copyright@2021 Team ALOHA</p>
         </footer>
 
         <!--===== GSAP =====-->

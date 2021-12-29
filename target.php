@@ -1,9 +1,21 @@
+<?php
+    include 'php/koneksi.php';
+    session_start();
+
+    $sql = "SELECT nama FROM subkategori";
+    $result = mysqli_query($conn, $sql);
+    
+    
+   
+    
+?>
+
 <html>
     <head>
         <meta charset="utf-8">
 	    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="css/target.css">
+        <link rel="stylesheet" href="css/edit-transaksi-pengeluaran.css">
         
 
         <!--Import Font dari web-->
@@ -23,10 +35,7 @@
             </div>
                 <nav>
                         <ul class="navbarMenu">
-                            <li><h3><a href="#"></a></h3></li>
-                            <li><h3><a href="#"></a></h3></li>
-                            <li><h3><a href="#">About</a></h3></li>
-                            <li><h3><a href="php/logout.php">Log Out</a></h3></li>
+                            <li><h3><a href="php/logout.php">Log out</a></h3></li>
                         </ul>
                 </nav>
         </div>
@@ -48,7 +57,6 @@
                     <div class="sidebar-item">
                         <div id="sidebar-item-icon">
                             <img src="foto/icons8-dashboard-100.png" alt="" id="sidebar-image">
-                            
                         </div>
                         <div class="sidebar-item-text">
                             <h3>Dashboard</h3>
@@ -62,19 +70,19 @@
                             <img src="foto/icons8-money-96.png" alt="" id="sidebar-image">
                         </div>
                         <div class="sidebar-item-text">
-                            <h3>Uang ></h3>
+                            <h3>Transaksi</h3>
                         </div>
                     </div>
                 </a>
 
                     <div class="collapse-item">
-                        <a href="pemasukan.php" class="collapse-item-container" >
+                        <a href="penjualan.php" class="collapse-item-container" >
                             <div class="collapse-item-2">
                                 <div id="collapse-item-icon">
-                                    <img src="foto/icons8-get-cash-96.png" alt="" id="sidebar-image">
+                                    <img src="foto/kanan.png" alt="" id="sidebar-image">
                                 </div>
                                 <div class="sidebar-item-text">
-                                    <h4>Pemasukkan</h4>
+                                    <h4>Penjualan</h4>
                                 </div>
                             </div>
                         </a>
@@ -82,51 +90,73 @@
                         <a href="pengeluaran.php" class="collapse-item-container">
                             <div class="collapse-item-2">
                                 <div id="collapse-item-icon">
-                                    <img src="foto/icons8-return-purchase-96.png" alt="" id="sidebar-image">
+                                    <img src="foto/kiri.png" alt="" id="sidebar-image">
                                 </div>
                                 <div class="sidebar-item-text">
                                     <h4>Pengeluaran</h4>
                                 </div>
                             </div>
                         </a>
+
+                        <a href="laporan-transaksi.php" class="collapse-item-container">
+                            <div class="collapse-item-2">
+                                <div id="collapse-item-icon">
+                                    <img src= "foto/laporan.png" alt="" id="sidebar-image">
+                                </div>
+                                <div class="sidebar-item-text">
+                                    <h4>Laporan</h4>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                    
+
                 <a href="#" class="sidebar-item-container collapsible">
-                    <div class="sidebar-item ">
+                    <div class="sidebar-item">
                         <div id="sidebar-item-icon">
                             <img src="foto/icons8-money-bag-90.png" alt="" id="sidebar-image">
                         </div>
                         <div class="sidebar-item-text">
-                            <h3>Utang-Piutang ></h3>
+                            <h3>Utang & Piutang</h3>
                         </div>
                     </div>
                 </a>
 
                     <div class="collapse-item">
-                        <a href="#" class="collapse-item-container  " >
+                        <a href="utang.php" class="collapse-item-container" >
                             <div class="collapse-item-2">
                                 <div id="collapse-item-icon">
-                                    <img src="foto/icons8-debt-96.png" alt="" id="sidebar-image">
+                                  <img src="foto/keluar.png" alt="" id="sidebar-image">
                                 </div>
                                 <div class="sidebar-item-text">
                                     <h4>Utang</h4>
                                 </div>
                             </div>
                         </a>
-        
-                        <a href="piutang.php" class="collapse-item-container selected">
+
+                        <a href="utang.php" class="collapse-item-container" >
                             <div class="collapse-item-2">
                                 <div id="collapse-item-icon">
-                                    <img src="foto/icons8-debt-90.png" alt="" id="sidebar-image">
+                                    <img src="foto/masuk.png" alt="" id="sidebar-image">
                                 </div>
                                 <div class="sidebar-item-text">
                                     <h4>Piutang</h4>
                                 </div>
                             </div>
                         </a>
+
+                        <a href="utang.php" class="collapse-item-container" >
+                            <div class="collapse-item-2">
+                                <div id="collapse-item-icon">
+                                    <img src="foto/laporan.png" alt="" id="sidebar-image">
+                                </div>
+                                <div class="sidebar-item-text">
+                                    <h4>Laporan</h4>
+                                </div>
+                            </div>
+                        </a>
                     </div>
 
-                <a href="#" class="sidebar-item-container">
+                <a href="#" class="sidebar-item-container selected">
                     <div class="sidebar-item">
                         <div id="sidebar-item-icon">
                             <img src="foto/icons8-goal-100.png" alt="" id="sidebar-image">
@@ -135,15 +165,14 @@
                             <h3>Target</h3>
                         </div>
                     </div>
-                </a>
-
+            </a>
                 <a href="#" class="sidebar-item-container collapsible">
                     <div class="sidebar-item">
                         <div id="sidebar-item-icon">
                             <img src="foto/icons8-account-100.png" alt="" id="sidebar-image">
                         </div>
                         <div class="sidebar-item-text">
-                            <h3>Account ></h3>
+                            <h3>Account</h3>
                         </div>
                     </div>
                 </a>
@@ -161,153 +190,47 @@
                         </a>
         
                         
-                    </div>
-                
-               
+                    </div> 
             </div>
 
-            
 
+            
+            
             <div id="content-card">
 
-                <div class = "daftarTarget">Daftar Target</div>
-                
-                    
-                </table>
+<div class = "daftarTarget">Yuk cobain fitur ini, kamu jadi lebih mudah memantau performa penjualanmu!</div>
 
-                <table id="table" rules=none>
-                    <tr>
-                        <th><h3>Nama</h3></th>
-                        <th><h3>Pembukuan</h3></th>
-                        <th id="table-target"><h3>Target</h3></th>
-                        <th><h3>Sisa</h3></th>
-                        <th><h3>Tanggal</h3></th>
-                        <th><h3>Aksi</h3></th>
-                    </tr>
-                    <tr>
-                        <td><p>Utang 1</p></td>
-                        <td><p>Rp 0</p></td>
-                        <td class="table-target"><p>Rp 10000000</p></td>
-                        <td><p>Rp500.000,00-</p></td>
-                        <td><p>2020-4-20</p></td>
-                        <td class="aksi-col">
-                            <a href="#" class="isi-aksi">
-                                <img src="foto/setor.png" style="width:1em;height:1em;" ><p>Setor</p>
-                            </a>
-                            <a href="#" class="isi-aksi">
-                                <img src="foto/edit-icon.png" style="width:1em;height:1em;" ><p>Edit</p>
-                            </a>
-                            <a href="#" class="isi-aksi">
-                                <img src="foto/hapus-icon.png" style="width:1em;height:1em;" ><p>Hapus</p>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><p>Utang 2</p></td>
-                        <td><p>Rp 0</p></td>
-                        <td class="table-target"><p>Rp 10000000</p></td>
-                        <td><p>Rp20.000.000,00-</p></td>
-                        <td><p>2021-6-9</p></td>
-                        <td class="aksi-col">
-                            <a href="#" class="isi-aksi">
-                                <img src="foto/setor.png" style="width:1em;height:1em;" ><p>Setor</p>
-                            </a>
-                            <a href="#" class="isi-aksi">
-                                <img src="foto/edit-icon.png" style="width:1em;height:1em;" ><p>Edit</p>
-                            </a>
-                            <a href="#" class="isi-aksi">
-                                <img src="foto/hapus-icon.png" style="width:1em;height:1em;" ><p>Hapus</p>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><p>Utang 3</p></td>
-                        <td><p>Rp 0</p></td>
-                        <td class="table-target"><p>Rp 10000000</p></td>
-                        <td><p>Rp500.000,00-</p></td>
-                        <td><p>2021-10-20</p></td>
-                        <td class="aksi-col">
-                            <a href="#" class="isi-aksi">
-                                <img src="foto/setor.png" style="width:1em;height:1em;" ><p>Setor</p>
-                            </a>
-                            <a href="#" class="isi-aksi">
-                                <img src="foto/edit-icon.png" style="width:1em;height:1em;" ><p>Edit</p>
-                            </a>
-                            <a href="#" class="isi-aksi">
-                                <img src="foto/hapus-icon.png" style="width:1em;height:1em;" ><p>Hapus</p>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><p>Utang 4</p></td>
-                        <td><p>Rp 0</p></td>
-                        <td class="table-target"><p>Rp 10000000</p></td>
-                        <td><p>Rp500.000,00-</p></td>
-                        <td><p>2021-11-10</p></td>
-                        <td class="aksi-col">
-                            <a href="#" class="isi-aksi">
-                                <img src="foto/setor.png" style="width:1em;height:1em;" ><p>Setor</p>
-                            </a>
-                            <a href="#" class="isi-aksi">
-                                <img src="foto/edit-icon.png" style="width:1em;height:1em;" ><p>Edit</p>
-                            </a>
-                            <a href="#" class="isi-aksi">
-                                <img src="foto/hapus-icon.png" style="width:1em;height:1em;" ><p>Hapus</p>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><p>Utang 5</p></td>
-                        <td><p>Rp 0</p></td>
-                        <td class="table-target"><p>Rp 10000000</p></td>
-                        <td><p>Rp120.000.000,00-</p></td>
-                        <td><p>2021-11-20</p></td>
-                        <td class="aksi-col">
-                            <a href="#" class="isi-aksi">
-                                <img src="foto/setor.png" style="width:1em;height:1em;" ><p>Setor</p>
-                            </a>
-                            <a href="#" class="isi-aksi">
-                                <img src="foto/edit-icon.png" style="width:1em;height:1em;" ><p>Edit</p>
-                            </a>
-                            <a href="#" class="isi-aksi">
-                                <img src="foto/hapus-icon.png" style="width:1em;height:1em;" ><p>Hapus</p>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><p>Utang 6</p></td>
-                        <td><p>Rp 0</p></td>
-                        <td class="table-target"><p>Rp 10000000</p></td>
-                        <td><p>Rp10.000.000,00-</p></td>
-                        <td><p>2021-11-25</p></td>
-                        <td class="aksi-col">
-                            <a href="#" class="isi-aksi">
-                                <img src="foto/setor.png" style="width:1em;height:1em;" ><p>Setor</p>
-                            </a>
-                            <a href="#" class="isi-aksi">
-                                <img src="foto/edit-icon.png" style="width:1em;height:1em;" ><p>Edit</p>
-                            </a>
-                            <a href="#" class="isi-aksi">
-                                <img src="foto/hapus-icon.png" style="width:1em;height:1em;" ><p>Hapus</p>
-                            </a>
-                        </td>
-                    </tr>
-                </table>
-                <a href="" id="button-tambah">
-                    <div id="button-tambah-container">   
-                        <img src="foto/icons8-plus-+-96.png" alt="" id="button-tambah-img">
-                        Tambah
-                    </div>
-                </a>
-            
+<img src="foto/logo-orang-target.png" style="widht:50px;height:50px; ">
+<!-- <style style="widht:200px;height:200px; "> -->
+<p>Tambah target penjualanmu disini!</p>
+
+<a href="" id="button-tambah">
+    <div id="button-tambah-container">   
+        <img src="foto/icons8-plus-+-96.png" alt="" id="button-tambah-img">
+        Tambah Target
+    </div>
+</a>
+
+<div class="isi">
+<p>Berikut target penjualanmu yang sudah tercapai!</p>
+<div class="laporan-container">
+        <div class="laporan-card">
+            <div class="laporan-card-kategori">
+                <p>Target UKM</p>
+                <h1>Rp 10.000.000</h1>
             </div>
-
+            <div class="laporan-card-jumlah">
+                <h2 class="jumlah-penjualan">12 Januari 2021 s/d 12 Januari 2022</h2>
+            </div>
         </div>
+    </div>
+</div>
 
-        
+</div>
+</div>
 
         <div id="footer">
-            <h3 style="text-align:center">Copyright@2021 TEAM ALOHA </h3>
+            <h4>Copyright@2021 Team ALOHA </h4>
         </div>
     </div>
 

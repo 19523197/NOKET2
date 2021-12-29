@@ -1,3 +1,14 @@
+<?php
+    include 'php/koneksi.php';
+    session_start();
+
+    $sql = "SELECT * FROM pengguna WHERE username = '$_SESSION[username]'" ;
+    $result = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_assoc($result);
+   
+    
+?>
+
 <html>
     <head>
         <meta charset="utf-8">
@@ -36,7 +47,9 @@
                 <div class="sidebar-item-profile">
                     <div id="sidebar-image-container">
                         <img src="foto/avatar-icon.png" alt="#" id="sidebar-image-profile">
-                        <h1>Admin</h1>   
+                        <h1><?php
+                        echo $row['username'];
+                        ?></h1>   
                     </div>
                 </div>
                 
@@ -86,16 +99,7 @@
                             </div>
                         </a>
 
-                        <a href="laporan-transaksi.php" class="collapse-item-container">
-                            <div class="collapse-item-2">
-                                <div id="collapse-item-icon">
-                                    <img src= "foto/laporan.png" alt="" id="sidebar-image">
-                                </div>
-                                <div class="sidebar-item-text">
-                                    <h4>Laporan</h4>
-                                </div>
-                            </div>
-                        </a>
+                        
                     </div>
 
                 <a href="#" class="sidebar-item-container collapsible selected">
@@ -132,16 +136,7 @@
                             </div>
                         </a>
 
-                        <a href="utang.php" class="collapse-item-container" >
-                            <div class="collapse-item-2">
-                                <div id="collapse-item-icon">
-                                    <img src="foto/laporan.png" alt="" id="sidebar-image">
-                                </div>
-                                <div class="sidebar-item-text">
-                                    <h4>Laporan</h4>
-                                </div>
-                            </div>
-                        </a>
+                        
                     </div>
 
                 <a href="#" class="sidebar-item-container">

@@ -1,23 +1,9 @@
-<?php
-    include 'php/koneksi.php';
-    session_start();
-
-    $sql = "SELECT nama FROM subkategori";
-    $result = mysqli_query($conn, $sql);
-    
-    $sql = "SELECT * FROM pengguna WHERE username = '$_SESSION[username]'" ;
-    $result = mysqli_query($conn, $sql);
-    $row = mysqli_fetch_assoc($result);
-   
-    
-?>
-
 <html>
     <head>
         <meta charset="utf-8">
-	    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="css/edit-transaksi-pengeluaran.css">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/edit-target.css">
         
 
         <!--Import Font dari web-->
@@ -37,7 +23,7 @@
             </div>
                 <nav>
                         <ul class="navbarMenu">
-                            <li><h3><a href="php/logout.php">Log out</a></h3></li>
+                            <li><h3><a href="login.php">Log out</a></h3></li>
                         </ul>
                 </nav>
         </div>
@@ -50,28 +36,27 @@
                 <div class="sidebar-item-profile">
                     <div id="sidebar-image-container">
                         <img src="foto/avatar-icon.png" alt="#" id="sidebar-image-profile">
-                        <h1><?php
-                        echo $row['username'];
-                        ?></h1>   
+                        <h1>Admin</h1>   
                     </div>
                 </div>
                 
             
-                <a href="mainPage.php" class="sidebar-item-container">
+                <a href="#" class="sidebar-item-container">
                     <div class="sidebar-item">
                         <div id="sidebar-item-icon">
                             <img src="foto/icons8-dashboard-100.png" alt="" id="sidebar-image">
                         </div>
+
                         <div class="sidebar-item-text">
                             <h3>Dashboard</h3>
                         </div>
                     </div>
                 </a>
 
-                <a href="#" class="sidebar-item-container collapsible  selected">
+                <a href="#" class="sidebar-item-container collapsible">
                     <div class="sidebar-item">
                         <div id="sidebar-item-icon">
-                            <img src="foto/icons8-money-96.png" alt="" id="sidebar-image">
+                            <img src="foto/kiri.png" alt="" id="sidebar-image">
                         </div>
                         <div class="sidebar-item-text">
                             <h3>Transaksi</h3>
@@ -80,34 +65,21 @@
                 </a>
 
                     <div class="collapse-item">
-                        <a href="penjualan.php" class="collapse-item-container" >
+                        <a href="pemasukan.php" class="collapse-item-container" >
                             <div class="collapse-item-2">
                                 <div id="collapse-item-icon">
-                                    <img src="foto/kanan.png" alt="" id="sidebar-image">
                                 </div>
                                 <div class="sidebar-item-text">
-                                    <h4>Penjualan</h4>
+                                    <h4>Laporan</h4>
                                 </div>
                             </div>
                         </a>
-        
-                        <a href="pengeluaran.php" class="collapse-item-container">
-                            <div class="collapse-item-2">
-                                <div id="collapse-item-icon">
-                                    <img src="foto/kiri.png" alt="" id="sidebar-image">
-                                </div>
-                                <div class="sidebar-item-text">
-                                    <h4>Pengeluaran</h4>
-                                </div>
-                            </div>
-                        </a>
-
                     </div>
-
+                    
                 <a href="#" class="sidebar-item-container collapsible">
                     <div class="sidebar-item">
                         <div id="sidebar-item-icon">
-                            <img src="foto/icons8-money-bag-90.png" alt="" id="sidebar-image">
+                            <img src="foto/kanan.png" alt="" id="sidebar-image">
                         </div>
                         <div class="sidebar-item-text">
                             <h3>Utang & Piutang</h3>
@@ -119,28 +91,15 @@
                         <a href="utang.php" class="collapse-item-container" >
                             <div class="collapse-item-2">
                                 <div id="collapse-item-icon">
-                                  <img src="foto/keluar.png" alt="" id="sidebar-image">
                                 </div>
                                 <div class="sidebar-item-text">
-                                    <h4>Utang</h4>
+                                    <h4>Laporan</h4>
                                 </div>
                             </div>
                         </a>
-
-                        <a href="utang.php" class="collapse-item-container" >
-                            <div class="collapse-item-2">
-                                <div id="collapse-item-icon">
-                                    <img src="foto/masuk.png" alt="" id="sidebar-image">
-                                </div>
-                                <div class="sidebar-item-text">
-                                    <h4>Piutang</h4>
-                                </div>
-                            </div>
-                        </a>
-
                     </div>
 
-                <a href="#" class="sidebar-item-container">
+                <a href="#" class="sidebar-item-container selected">
                     <div class="sidebar-item">
                         <div id="sidebar-item-icon">
                             <img src="foto/icons8-goal-100.png" alt="" id="sidebar-image">
@@ -174,43 +133,43 @@
                         </a>
         
                         
-                    </div> 
+                    </div>
+                
+               
             </div>
 
+            
 
-            
-            
             <div id="content-card">
                 <div id="content-container">
-                    <form action="php/input-transaksi.php" method="POST">
-                        <a href="pengeluaran.php" style="color:929292; text-decoration: none; margin-top:5%;">Kembali</a>
+                    <form action="php/input-utang.php" method="POST">
+                        <a href="utang.php" style="color:929292; text-decoration: none; margin-top:5%;">Kembali</a>
                         <div class="laporan-container">
                             <div class="laporan-card">
                                 <div class="laporan-card-judul">
-                                    <h1>Tambah Pengeluaran</h1>
+                                    <h1>Edit Target Penjualan</h1>
                                 </div>
                                 <div class="laporan-card-main1">
-                                    <label for="input-deskripsi">Deskripsi</label>
-                                    <input type="text" name="deskripsi" id="">
-                                </div>
-                                
-                                <div class="laporan-card-main3">
-                                    <label for="input-kategori">Kategori</label>
-                                    <select name="kategori" id="">
-                                        <option value="suplai alat dan barang">Suplai Alat dan Barang</option>
-                                        <option value="pembaruan dan pembangunan">Pembaruan dan Pembangunan</option>
+                                    <label for="input-instansi">Nama Target Penjualan</label><br>
+                                    <input type="text" name="target" id="">
+                                    
                                     </select>
                                 </div>
-                                <div class="laporan-card-main4">
-                                    <label for="input-nominal">Nominal</label>
-                                    <input type="number" name="nominal" id="">
-                                </div>
-                                <div class="laporan-card-main5">
-                                    <label for="input-tanggal" style="display: block;">Tanggal</label>
+                                <div class="laporan-card-main2">
+                                    <label for="input-tanggal" style="display: block;">Tanggal Mulai</label>
                                     <input type="date" name="tanggal" id="">
                                 </div>
+                                
+                                <div class="laporan-card-main4">
+                                    <label for="input-tanggal" style="display: block;">Tanggal Selesai</label>
+                                    <input type="date" name="tanggal" id="">
+                                </div>
+                                <div class="laporan-card-main5">
+                                    <label for="input-nominal">Nominal</label> <br>
+                                    <input type="number" name="jumlah" id="">
+                                </div>
                                 <div class="laporan-card-button">
-                                    <input type="submit" name="" id="" value="tambah">
+                                    <input type="submit" name="" id="" value="edit">
                                 </div>
                                 
                             </div>

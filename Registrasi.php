@@ -1,9 +1,10 @@
 <html>
     <head>
+        <title>Registrasi NOKET</title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="css/Registrasi.css">
+        <link rel="stylesheet" href="css/Registrasi.css?v=<?php echo time(); ?>">
         
 
         <!--Import Font dari web-->
@@ -25,7 +26,7 @@
                         <ul class="navbarMenu">
                             <li><h3><a href="index.php">Landing Page</a></h3></li>
                             <li><h3><a href="login.php">Log In</a></h3></li>
-                            <li><h3><a href="#" id="selected">Sign Up</a></h3></li>
+                            <li><h3><a href="Registrasi.php" id="selected">Sign Up</a></h3></li>
                         </ul>
                 </nav>
         </div>
@@ -57,11 +58,11 @@
                     </div>
                     <div id="form-container-password">
             
-                        <input type="password" name="password" id="" placeholder="Password">
+                        <input type="password" calss="password" name="password" id="password" placeholder="Password">
                     </div>
 
                     <div id="form-container-password">
-                        <input type="password" name="confirm-password" id="" placeholder="Confirm Password">
+                        <input type="password" calss="confirm-password" name="confirm-password" id="confirm-password" placeholder="Confirm Password">
                     </div>
 
                     <div id="form-container-password">
@@ -69,23 +70,22 @@
                     </div>
 
                     <div id="form-container-button">
-                        <input type="submit" value="Register"></a>
+                        <input class = "button" type="submit" value="Register" onclick="validasi()"></input>
                     </div>
 
-                    
-                    
                     </form>
+                    
                 </div>
             </div>
             
 
         </div>
-
         
 
         <div id="footer">
-            <h4>Copyright@2021 Team ALOHA </h4>
+            <p>Copyright@2021 Team ALOHA </p>
         </div>
     </div>
     </body>
+    <script src="js/registrasiValidasi.js"></script>
 </html>
