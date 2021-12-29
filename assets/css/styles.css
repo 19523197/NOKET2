@@ -20,15 +20,19 @@
 }
 
 h1,h2,h3{
-  font-family: 'Work-Sans',sans-serif;
+  font-family: 'Raleway','Work-Sans',sans-serif;
 }
 
 h4,h5,h6{
 font-family: 'Raleway', sans-serif;
 }
 
-p,a{
-font-family: 'Work Sans', sans-serif;
+p,a {
+font-family: 'Roboto','Work Sans', sans-serif;
+}
+
+li { 
+  font-family: 'Roboto','Work Sans', sans-serif;
 }
 
 
@@ -83,6 +87,7 @@ img{
 
 .l-header{
   width: 100%;
+  height: 10%;
   position: fixed;
   top: 0;
   left: 0;
@@ -93,6 +98,7 @@ img{
 /*===== NAV =====*/
 .nav__logo{
   font-size: 36px;
+  margin-top: 10%;
 }
 
 .nav{
@@ -181,9 +187,10 @@ img{
 
 .home__title{
   font-size: var(--big-font-size);
-  font-family: 'Changa';
   line-height: 1.3;
   margin-bottom: 1rem;
+  font-family: 'Changa','Roboto','Work Sans', sans-serif;
+  font-weight: 200;
 }
 
 .home__abb{
@@ -194,7 +201,6 @@ img{
 .home__description{
   margin-bottom: 2.5rem;
   font-size: 17px;
-  margin-right: %;
 }
 
 .home__button{
@@ -250,18 +256,17 @@ img{
 
 /*===== Footer =====*/
 #footer{
-      width: 100%;
-      height: 10%;
-      line-height: 50px;
-      background: #333;
-      color: #fff;
-      position: absolute;
-      margin: auto;
-      text-align: center;
-      }
-#footer h3{
-  font-weight: lighter;
-}
+  width: 100%;
+  height: 10%;
+  line-height: 50px;
+  background: #333;
+  color: #fff;
+  position: absolute;
+  margin: auto;
+  padding-top:2%;
+  text-align: center;
+  }
+
 /* ===== MEDIA QUERIES =====*/
 @media screen and (min-width: 768px){
   body{
@@ -278,6 +283,10 @@ img{
 
   .nav__list{
     display: flex;
+  }
+
+  .nav__list li{
+    padding-top: 5%;
   }
 
   .nav__item{
